@@ -1,98 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EasyFood</title>
-    <link rel="stylesheet" href="menu_superior.css">
-    <link rel="stylesheet" href="principal.css">
-    <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
-</head>
-<body>
-    <nav>
-  <ul class="container">
-    <li id="logo" logo><img src="imagens/Sonya-Swarm-Fast-Food.96.png" alt="" width="80px"></li>
-    <li><a href='#'>Home</a></li>
-    <li class='dropdown'>
-      <a href='#'>Cardápio <i class="fa fa-angle-down"></i></a>
-      <div class='mega-menu'>
-      	<div class="container">
-          <div class="item">
-              <h3>Home Page</h3>
-              <ul>
-                <li><a href='#'>Home Page No #1</a></li>
-                <li><a href='#'>Home Page No #2</a></li>
-                <li><a href='#'>Home Page No #3</a></li>
-                <li><a href='#'>Home Page No #4</a></li>
 
-              </ul>
-          </div> <!-- /.item -->
-          <div class="item">
-              <h3>Contact</h3>
-              <ul>
-                <li><a href='#'>Contact Page No #1</a></li>
-                <li><a href='#'>Contact Page No #2</a></li>
-                <li><a href='#'>Contact Page No #3</a></li>
-                <li><a href='#'>Contact Page No #4</a></li>
-                <li><a href='#'>Contact Page No #5</a></li>
-              </ul>
-          </div> <!-- /.item -->
-          <div class="item">
-              <h3>Portfolio</h3>
-              <ul>
-                <li><a href='#'>Portfolio Page No #1</a></li>
-                <li><a href='#'>Portfolio Page No #2</a></li>
-                <li><a href='#'>Portfolio Page No #3</a></li>
-              </ul>
-          </div> <!-- /.item --> 
-          <div class="item">
-             <h3>Custom</h3>
-             <img src="http://placehold.it/250x200">
-          </div> <!-- /.item -->
-        </div><!-- /.container -->
-      </div><!-- /.mega-menu -->
-    </li><!-- /.dropdown -->
-    <li class='dropdown'>
-      <a href='#'>Favoritos<i class="fa fa-angle-down"></i> </a>
-      <div class='mega-menu'>
-        <div class="container">
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="imagens/lanche1.webp" width="250px">
-          </div> <!-- /.item -->
-          
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="imagens/lanche2.jpeg" width="250px">
-          </div> <!-- /.item -->
-          
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="http://placehold.it/250x200">
-          </div> <!-- /.item -->
-          
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="http://placehold.it/250x200">
-          </div> <!-- /.item -->
-          
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="http://placehold.it/250x200">
-          </div> <!-- /.item -->
-          
-          <div class="item">
-              <h3>Image One</h3>
-              <img src="http://placehold.it/250x200">
-          </div> <!-- /.item -->
-          
-        </div><!-- .container -->
-      </div><!-- .mega-menu-->
-    </li><!-- .dropdown -->
-    <li><a href='#'>Sobre Nós</a></li>
-    <li><a href='#'>Fale Conosco</a></li>
-  </ul><!-- .container -->
-</nav>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EasyFood</title>
+   <!-- Montserrat Font -->
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu_superior.css">
+  <link rel="stylesheet" href="principal.css">
+  <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+  <header>
+    <input type="checkbox" id="toggle">
+    <nav>
+
+      <ul class="nav-list">
+        <li class="nav-item">
+          <a class="nav-link">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Cardápio</a>
+        </li>
+        <a class="logo desktop" href="#">
+          <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
+        </a>
+        <li class="nav-item">
+          <a class="nav-link">Sobre</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Contato</a>
+        </li>
+      </ul>
+
+      <label class="navbar-toggler" for="toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </label>
+
+    </nav>
+
+    <a class="mobile" href="#">
+      <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
+    </a>
+
+    <a href="./formulario.html" class="user">
+      <i class="ph ph-user"></i>
+      <p>Login</p>
+    </a>
+  </header>
+
 </body>
+
 </html>
