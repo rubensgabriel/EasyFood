@@ -6,7 +6,7 @@
     list-style: none;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-		box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 header {
@@ -21,27 +21,26 @@ header {
 }
 
 nav .logo {
-border-radius: 50%;
-background-color: rgb(221, 220, 220);
-margin-top: -30px;
-padding: 0 40px;
-margin-top: -40px;
-
+    border-radius: 50%;
+    background-color: rgb(221, 220, 220);
+    margin-top: -30px;
+    padding: 0 40px;
+    margin-top: -40px;
 }
 
 nav .logo img {
-	width: 70px;
-  height: 70px;
-  margin-top: 50px;
+    width: 70px;
+    height: 70px;
+    margin-top: 50px;
 }
 
 .mobile img {
-  display: none;
+    display: none;
 }
 
 nav .nav-list {
     display: flex;
-		justify-content: center;
+	justify-content:left;
 }
 
 nav .nav-list .nav-item {
@@ -49,6 +48,7 @@ nav .nav-list .nav-item {
     height: 100%;
     padding: 0 15px;
     transition: .4s;
+    transition: all .6s;
 }
 
 nav .nav-list .nav-item:hover {
@@ -96,11 +96,17 @@ nav .nav-list .nav-link {
 @media (max-width: 675px) {
 	.mobile img {
 		display: block;
-		width: 60px;
-		position: absolute;
-		left: 46%;
-		top: 0px;
+		width: 70px;
+		margin-top: 20px;
 	}
+    .mobile {
+        position: absolute;
+        border-radius: 50%;
+        background-color: rgb(221, 220, 220);
+        margin-top: -30px;
+        padding: 20px 30px;
+        left: 38%;
+    }
 
 	nav .logo img {
 		display: none;
@@ -114,16 +120,17 @@ nav .nav-list .nav-link {
         display: grid;
         position: absolute;
         background: #e0591a;
-        width: 100%;
+        width: 35%;
         top: 60px;
         left: 0;
         transform: translateY(-100%);
         z-index: -1;
         transition: .3s;
+        justify-content: left;
     }
 
     nav .nav-list .nav-item {
-        padding-left: 35px;
+        padding-left: 30px;
     }
 
     nav .navbar-toggler {
@@ -159,6 +166,8 @@ input {
 
 input:checked ~ nav .nav-list {
     transform: translateY(0);
+    z-index: 2;
+    width: 35%;
 }
 
 input:checked ~ nav .navbar-toggler {

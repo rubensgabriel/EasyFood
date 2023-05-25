@@ -1,0 +1,51 @@
+main section {
+    background: linear-gradient(orange, yellow);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 80px 20px;
+}
+
+main section .content {
+    max-width: 450px;
+}
+
+main section .content h1 {
+    font-size: 3rem;
+}
+
+main section .content p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+main section .content a {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+}
+
+main section img {
+    width: 500px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 40%;
+}
+
+main section .content a:hover {
+    animation: btn 0.5s infinite alternate ease-in-out; 
+}
+  
+  @keyframes btn {
+    0% {
+      transform: scale(1); 
+    } 100% {
+      transform: scale(1.05); 
+    }
+  }
