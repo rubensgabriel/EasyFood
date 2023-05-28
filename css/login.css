@@ -403,7 +403,15 @@ form.sign-up-form {
     }
 
     .container.sign-up-mode:before {
-        bottom: 28%;
+        bottom: 21%;
         left: 50%;
+    }
+
+    .right-panel .content {
+        padding-top: 195px;
+    }
+
+    .left-panel .content {
+        padding-top: 0;
     }
 }
