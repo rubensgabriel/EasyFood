@@ -360,7 +360,7 @@ form.sign-up-form {
 
     .container.sign-up-mode:before {
         transform: translate(-50%, 100%);
-        bottom: 21%;
+        bottom: 32%;
         right: initial;
     }
 
@@ -372,17 +372,50 @@ form.sign-up-form {
     .container.sign-up-mode .right-panel .image,
     .container.sign-up-mode .right-panel .content {
       transform: translateY(0px);
+      margin-top: 60px;
     }
 
     .container.sign-up-mode .signin-signup {
         top: 5%;
         transform: translate(-50%, 0);
     }
+
+    .right-panel{
+        z-index: 6;
+        height: 0px;
+    }
+
+    .sign-up-form .input-field {
+        height: 44px;
+        margin: 8px 0;
+    }
+    
+    .sign-up-form .fas {
+        line-height: 45px;
+        font-size: 1rem;
+    }
+
+    .sign-up-form .title {
+        font-size: 2rem;
+    }
+
+    .sign-up-form .btn {
+        margin: 8px;
+    }
 }
 
 @media (max-width: 570px){
     form {
         padding: 0 1.5rem;
+    }
+
+    .sign-up-form .input-field {
+        height: 45px;
+    }
+
+    .sign-up-form .fas {
+        line-height: 46px;
+        font-size: 1rem;
     }
 
     .image {
@@ -403,15 +436,7 @@ form.sign-up-form {
     }
 
     .container.sign-up-mode:before {
-        bottom: 21%;
+        bottom: 28%;
         left: 50%;
-    }
-
-    .right-panel .content {
-        padding-top: 195px;
-    }
-
-    .left-panel .content {
-        padding-top: 0;
     }
 }

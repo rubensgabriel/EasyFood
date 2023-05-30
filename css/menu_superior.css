@@ -137,10 +137,11 @@ nav .nav-list .nav-link {
         display: grid !important;
     }
 
-		header {
-			justify-content: flex-start;
-			padding-left: 0px;
-		}
+	header {
+		justify-content: flex-start;
+		padding-left: 0px;
+	}
+
 
 }
 
