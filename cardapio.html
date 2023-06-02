@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cardápio</title>
+  <!-- Montserrat Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/cardapio.css">
+  <link rel="stylesheet" href="css/menu_superior.css">
+  <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="toggle">
+        <nav>
+    
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="cardapio.html">Cardápio</a>
+            </li>
+            <a class="logo desktop" href="index.html">
+              <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
+            </a>
+            <li class="nav-item">
+              <a class="nav-link">Sobre</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link">Contato</a>
+            </li>
+          </ul>
+    
+          <label class="navbar-toggler" for="toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </label>
+    
+        </nav>
+    
+        <a class="mobile" href="#">
+          <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
+        </a>
+    
+        <a href="login.html" class="user">
+          <i class="ph ph-user"></i>
+          <p>Login</p>
+        </a>
+      </header>
+
+  <section class="header">
+    
+    <h1 class="title-primary">Cardápio</h1>
+    
+    <div>
+        <div class="input-search">
+            <input class="filter" type="text" placeholder="Pesquisa">
+        </div>
+      <ul class="items">
+        <li class="item active" data-name="todos">Todos</li>
+        <li class="item" data-name="entrada">Entradas</li>
+        <li class="item" data-name="salada">Saladas</li>
+        <li class="item" data-name="principal">Principal</li>
+        <li class="item" data-name="sobremesa">Sobremesas</li>
+        <li class="item" data-name="bebida">Bebidas</li>
+      </ul>
+    </div>
+</section>
+  
+  <main>
+      <ul class="cards">
+        <li class="food">
+          <div class="image" data-name="entrada">
+            <span><img class="image-food" src="https://pestocozinhabar.com.br/wp-content/uploads/2022/06/couvert-1-300x300.jpg" alt="Entrada"></span>
+            <h2>Couvert da Casa</h2>
+            <p>Pesto de manjericão, pesto de tomate seco, manteiga, torradas, focaccia e brioche</p>
+            <span>R$ 38</span>
+          </div>
+        </li>
+         <li class="food">
+           <div class="image" data-name="entrada">
+            <span><img class="image-food" src="https://pestocozinhabar.com.br/wp-content/uploads/2020/12/steak-tartar-300x300.jpg" alt="Entrada"></span>
+            <h2>Steak Tartar</h2>
+            <p>Tartar de filé mignon com maionese defumada e picles de mostarda, servido com fatias de pão de fermentação natural</p>
+            <span>R$ 38</span>
+          </div>
+         </li>
+        
+        <li class="food">
+          <div class="image" data-name="salada">
+            <span><img class="image-food" src="https://pestocozinhabar.com.br/wp-content/uploads/2021/02/salada-caesar-1-300x300.jpg" alt="Salada"></span>
+            <h2>Caesar</h2>
+            <p>Alface americana, molho caesar especial da casa, tiras de frango, lascas de parmesão e croutons</p>
+            <span>R$ 42</span>
+          </div>
+        </li class="food">
+         <div class="image" data-name="salada">
+          <span><img class="image-food" src="https://pestocozinhabar.com.br/wp-content/uploads/2021/01/Carpaccio-2-300x300.jpg" alt="Salada"></span>
+          <h2>Carpaccio</h2>
+          <p>Finíssimas laminas de lagarto black angus, rúcula, pesto de manjericão e parmesão</p>
+          <span>R$ 42</span>
+        </div>
+        <li class="food">
+          <div class="image" data-name="bebida">
+            <span><img class="image-food" src="https://kahdog.com.br/wp-content/uploads/2021/07/Fotos-Site-Kahdog21.jpg" alt="Refrigerante"></span>
+            <h2>Refrigerante 350ml</h2>
+            <p>Dentre as opções temos coca cola, guaraná, fanta laranja e uva, e sprite</p>
+            <span>R$ 5,00</span>
+          </div>
+        </li>
+         <li class="food">
+           <div class="image" data-name="bebida">
+            <span><img class="image-food" src="https://pestocozinhabar.com.br/wp-content/uploads/2023/06/Beijo-Doce-3-300x300.jpg" alt="Salada"></span>
+            <h2>Beijo Doce</h2>
+            <p>Sakê, Vermouth Dry, Licor de Lichia, Purê de Lichia, Xarope Simples e Limão Siciliano</p>
+            <span>R$ 42</span>
+            </div>
+         </li>
+      </ul>
+      
+  </main>
+
+  <!-- fullscreen image preview box -->
+  <div class="preview-box">
+    <div class="details">
+      <span class="title">Quantidade: <p>Not difined</p></span>
+      <span class="icon">X</span>
+    </div>
+    <div class="image-box">
+      <img src="" alt="">
+    </div>
+  </div>
+  <div class="shadow"></div>
+
+  <script src="js/cardapio.js"></script>
+  <script src="js/pesquisa.js"></script>
+</body>
+
+</html>

@@ -94,6 +94,10 @@ nav .nav-list .nav-link {
 }
 
 @media (max-width: 675px) {
+    nav {
+        padding-left: 20px;
+    }
+
 	.mobile img {
 		display: block;
 		width: 70px;
@@ -105,7 +109,7 @@ nav .nav-list .nav-link {
         background-color: rgb(221, 220, 220);
         margin-top: -30px;
         padding: 20px 30px;
-        left: 38%;
+        right: 32%;
     }
 
 	nav .logo img {
@@ -120,7 +124,7 @@ nav .nav-list .nav-link {
         display: grid;
         position: absolute;
         background: #e0591a;
-        width: 35%;
+        width: 40%;
         top: 60px;
         left: 0;
         transform: translateY(-100%);
@@ -130,7 +134,7 @@ nav .nav-list .nav-link {
     }
 
     nav .nav-list .nav-item {
-        padding-left: 30px;
+        padding-left: 26px;
     }
 
     nav .navbar-toggler {
