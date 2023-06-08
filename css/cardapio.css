@@ -155,70 +155,6 @@ ul {
   transform: scale(1.1);
 }
 
-/*============== Animações ==============*/
-
-@keyframes animate {
-  0% {
-    transform: scale(0.5);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
-/*============== Resposivo ==============*/
-
-@media (max-width: 1000px) {
-  .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-}
-
-@media (max-width: 850px) {
-  .header {
-    margin: 50px auto;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    
-  }
-}
-
-/* @media (min-width: 650px) {
-  .gallery img {
-    height: 200px;
-    width: 300px;
-  }
-} */
-
-@media (max-width: 650px) {
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    margin: 0px 10px;
-  }
-
-  .gallery .image {
-    max-width: 220px;
-    transition: 0.6 ease-in-out;
-    height: 420px;
-  }
-
-  .image div span:first-child {
-    font-size: 13px;
-  }
-
-  h2 {
-    font-size: 10px;
-  }
-
-  p {
-    font-size: 13px;
-  }
-}
-
 /*=================== Carrinho ===================*/
 
 .button {
@@ -384,4 +320,92 @@ polyline:last-child {
   100% {
     transform: translateX(140px) rotate(-18deg);
   }
+}
+
+/*============== Animações ==============*/
+
+@keyframes animate {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/*============== Resposivo ==============*/
+
+@media (max-width: 1000px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 850px) {
+  .header {
+    margin: 50px auto;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    
+  }
+}
+
+/* @media (min-width: 650px) {
+  .gallery img {
+    height: 200px;
+    width: 300px;
+  }
+} */
+
+@media (max-width: 650px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0px 10px;
+    gap: 10px;
+  }
+
+  .gallery .image {
+    width: 205px;
+    transition: 0.6 ease-in-out;
+    max-height: 230px;
+    padding: 12px;
+  }
+
+  .image img {
+    height: 180px;
+  }
+
+  .image div span:first-child {
+    font-size: 14px;
+  }
+
+  .gallery h2 {
+    font-size: 18px;
+  }
+
+  .gallery p {
+    font-size: 13px;
+    display: none;
+  }
+
+  .button {
+    width: 10px !important;
+  }
+
+  .button span {
+    line-height: 15px;
+    font-size: 12px !important; 
+  }
+
+.button span:before,
+.button span:after {
+  width: 0px;
+  height: 0px;
+  left: 0px;
+  top: 0px;
+}
 }
