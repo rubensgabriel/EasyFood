@@ -37,10 +37,6 @@
     flex: 1 1 45rem;
 }
 
-.home .home-slider .slide .content {
-    flex: 1 1 45rem;
-}
-
 .home .home-slider .slide .image img {
     max-width: 550px;
     height: 490px;
@@ -91,6 +87,10 @@
 
     .home .home-slider .slide .content p{
         font-size: 1.2rem;
+    }
+
+    .home .home-slider .slide {
+        padding: 5rem 0.2rem;
     }
 }
 
