@@ -10,7 +10,7 @@ dialog {
     position: relative;
     margin: auto;
     padding: 20px;
-    background-color: rgba(238, 238, 238, 0.863);
+    background-color: rgba(238, 238, 238, 0.918);
     position: fixed;
 }
 
@@ -18,13 +18,32 @@ button {
     background-color: #007bff;
     padding: 5px 25px;
     margin-top: 5px;
-    border-radius: 5px;
+    border-radius: 8px;
     display: block;
     color: white;
+    font-size: 18px;
+    border: 2px solid #007bff;
+    transition-duration: 0.6s;
+}
+
+button:hover {
+    background-color: white;
+    color: #007bff;
+    transition-duration: 0.6s;
 }
 
 dialog .image img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
+}
+dialog .image span {
+    font-size: 25px !important;
+    width: 200px;
+}
+
+@media (max-width: 500px) {
+    dialog{
+        max-width: 340px;
+    }
 }

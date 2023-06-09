@@ -26,6 +26,12 @@ nav .logo {
     margin-top: -30px;
     padding: 0 40px;
     margin-top: -40px;
+    transition-duration: 0.8s;
+}
+
+nav .logo:hover{
+    background-color: #e2b212;
+    transition-duration: 0.8s;
 }
 
 nav .logo img {
@@ -46,13 +52,14 @@ nav .nav-list {
 nav .nav-list .nav-item {
     cursor: pointer;
     height: 100%;
-    padding: 0 15px;
+    padding: 0 20px;
     transition: .4s;
     transition: all .6s;
 }
 
 nav .nav-list .nav-item:hover {
     background: rgb(202, 83, 15);
+    transition-duration: 0.6s;
 }
 
 nav .nav-list .nav-link {
@@ -134,7 +141,8 @@ nav .nav-list .nav-link {
     }
 
     nav .nav-list .nav-item {
-        padding-left: 26px;
+        padding-left: 30px;
+        padding-right: 42px;
     }
 
     nav .navbar-toggler {

@@ -398,7 +398,7 @@ polyline:last-child {
 
   .button {
     width: 10px !important;
-    padding-top: 6px;
+    padding-top: 8px;
   }
 
   .button span {
@@ -421,6 +421,7 @@ polyline:last-child {
 @media (max-width: 500px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+    margin: 15px;
   }
   
   .image img {
