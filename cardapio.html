@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/cardapio.css">
   <link rel="stylesheet" href="css/menu_superior.css">
+  <link rel="stylesheet" href="css/modal.css">
   <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
   <script
   src="https://kit.fontawesome.com/64d58efce2.js" 
@@ -82,7 +83,8 @@
     <section class="gallery">
       <div class="image" data-name="porcoes">
         <span><img src="https://pestocozinhabar.com.br/wp-content/uploads/2022/06/couvert-1-300x300.jpg"
-            alt="Entrada"></span>
+            alt="Entrada">
+            </span>
         <h2>Couvert da Casa</h2>
         <p>Pesto de manjericão, pesto de tomate seco, manteiga, torradas, focaccia e brioche</p>
         <div class="compra">
@@ -235,9 +237,26 @@
     </section>
   </main>
 
+  <dialog>
+
+    <div class="image" data-name="porcoes">
+      <span><img src="https://pestocozinhabar.com.br/wp-content/uploads/2022/06/couvert-1-300x300.jpg"
+        alt="Entrada">
+        </span>
+    <h2>Couvert da Casa</h2>
+    <p>Pesto de manjericão, pesto de tomate seco, manteiga, torradas, focaccia e brioche</p>
+      <div class="compra">
+        <span>R$ 42,00</span>
+        <button>Ok</button>
+      </div>
+    </div>
+    
+  </dialog>
+
   <script src="js/cardapio.js"></script>
   <script src="js/pesquisa.js"></script>
   <script src="js/carrinho.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 
 </html>
