@@ -30,6 +30,7 @@ button:hover {
     background-color: white;
     color: #007bff;
     transition-duration: 0.6s;
+    cursor: pointer;
 }
 
 dialog .image img {
