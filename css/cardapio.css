@@ -1,4 +1,6 @@
 /*============== Básicos ==============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
 :root {
   --primary-color: #007bff;
   --white-color: #ffffff;
@@ -6,10 +8,6 @@
 
 body {
   background-color: #ebeaea;
-}
-
-img {
-  max-width: 100%;
 }
 
 ul {
@@ -24,6 +22,7 @@ ul {
   font-size: 2.5rem;
   max-width: 40ch;
   color: #010b16;
+  font-family: 'Montserrat';
 }
 
 .input-search {
@@ -171,13 +170,13 @@ ul {
   border-radius: 8px;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
-  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(rgb(255, 255, 255), black);
   overflow: hidden;
   cursor: pointer;
   text-align: center;
   min-width: 120px;
   color: var(--text);
-  background: var(--background);
+  background: var(--primary-color);
   transform: scale(var(--scale, 1));
   transition: transform .4s cubic-bezier(.36, 1.01, .32, 1.27);
 }
@@ -356,13 +355,6 @@ polyline:last-child {
     
   }
 }
-
-/* @media (min-width: 650px) {
-  .gallery img {
-    height: 200px;
-    width: 300px;
-  }
-} */
 
 @media (max-width: 650px) {
   .gallery {

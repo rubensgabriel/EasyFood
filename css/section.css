@@ -1,29 +1,30 @@
-main .home2 {
-    background: linear-gradient(rgb(168, 168, 168), rgb(121, 205, 253));
+main .feedback {
+    background: linear-gradient(rgb(216, 196, 196), rgb(177, 222, 248));
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
     gap: 40px;
     padding: 80px 20px;
+    box-shadow: 6px 9px 12px rgba(0, 0, 0, 0.247) inset;
 }
 
-main .home2 .content {
-    max-width: 450px;
+main .feedback .content {
+    max-width: 750px;
 }
 
-main .home2 .content h1 {
+main .feedback .content h1 {
     font-size: 3rem;
     color: (18, 41, 56);
 }
 
-main .home2 .content p {
+main .feedback .content p {
     font-size: 20px;
     margin: 20px 0;
     color: rgb(68, 68, 68);
 }
 
-main .home2 .content a {
+main .feedback .content a {
     display: inline-block;
     font-size: 18px;
     color: white;
@@ -32,31 +33,31 @@ main .home2 .content a {
     border-radius: 5px;
 }
 
-main .home2 img {
+main .feedback img {
     width: 500px;
     height: 450px;  
 }
 
-main .home2 .content a:hover {
+main .feedback .content a:hover {
     animation: btn 0.5s infinite alternate ease-in-out; 
 }
 
 @media (max-width:500px){
-  .home2 {
+  .feedback {
       padding: 0.5rem 4% 0px;
   }
 
-  main .home2 .content h1{
+  main .feedback .content h1{
       color: rgb(18, 41, 56);
       font-size: 2.3rem;
   }
 
-  main .home2 img {
-      max-width: 380px;
-      max-height: 320px;
+  main .feedback img {
+    max-width: 360px;
+    max-height: 300px;
   }
 
-  main .home2 .content p{
+  main .feedback .content p{
       font-size: 1.2rem;
   }
 }
