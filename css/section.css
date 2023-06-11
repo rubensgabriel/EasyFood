@@ -35,7 +35,8 @@ main .feedback .content a {
 
 main .feedback img {
     width: 500px;
-    height: 450px;  
+    height: 450px; 
+    animation: btn 0.8s infinite alternate ease-in-out; 
 }
 
 main .feedback .content a:hover {

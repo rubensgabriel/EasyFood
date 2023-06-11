@@ -49,6 +49,10 @@
     box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.253);
 }
 
+.home .home-slider .slide .image img:hover {
+    animation: btn 1s infinite alternate ease-in-out; 
+}
+
 .home .home-slider .slide .content span{
     color: #0770b6;
     font-size: 1.5rem;

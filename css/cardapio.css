@@ -197,6 +197,11 @@ ul {
   transition: transform .7s ease;
 }
 
+.button:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
+}
+
 .button span:after {
   --w: 14px;
   --h: 2px;
@@ -217,7 +222,6 @@ ul {
   transform: scale(.75) rotate(var(--icon-r, 0deg)) translateY(var(--icon-y, 0));
   transition: transform .65s ease .05s;
 }
-
 
 .cart {
   position: absolute;
@@ -338,29 +342,33 @@ polyline:last-child {
 
 /*============== Resposivo ==============*/
 
-@media (max-width: 1000px) {
+@media (max-width: 1300px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    align-content: center !important;
+    margin: 0px 50px;
   }
 }
 
-@media (max-width: 850px) {
-  .header {
-    margin: 50px auto;
+@media (max-width: 910px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
   }
 
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-    
+  .gallery .image {
+    width: 370px;
+    height: 500px;
   }
 }
 
 @media (max-width: 650px) {
   .gallery {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 0px 10px;
     gap: 10px;
+    justify-items: center
   }
 
   .gallery .image {
@@ -370,11 +378,11 @@ polyline:last-child {
     padding: 10px;
   }
 
-  .image img {
-    height: 180px;
+  .gallery  .image img {
+    max-height: 180px;
   }
 
-  .image div span:first-child {
+  .gallery  .image div span:first-child {
     font-size: 16px;
   }
 
@@ -396,12 +404,10 @@ polyline:last-child {
   .button span {
     line-height: 25px;
     font-size: 12px !important;
-    
   }
 
-  .image .compra {
+  .gallery  .image .compra {
     display: grid;
-    grid-template-columns: repeat(1, 100px);
     grid-template-rows: 35px 10px;
   }
 
@@ -410,13 +416,38 @@ polyline:last-child {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 550px) {
   .gallery {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
     margin: 15px;
+    justify-items: center
   }
   
   .image img {
-    height: 170px;
+    max-height: 170px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    justify-items: center
+  }
+
+  .gallery .image {
+    width: 180px;
+    height: 265px;
+  }
+
+  .gallery .image img {
+    max-height: 160px;
+  }
+}
+
+@keyframes btn {
+  0% {
+    transform: scale(1); 
+  } 100% {
+    transform: scale(1.05); 
   }
 }

@@ -106,6 +106,13 @@ nav .nav-list .nav-link {
         padding: 0 20px;
     }
 
+    .user, .carrinho {
+        font-size: 15px;
+    }
+    
+    .user i, .carrinho i {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 675px) {
@@ -119,28 +126,28 @@ nav .nav-list .nav-link {
 		margin-top: 20px;
 	}
 
-    .mobile:hover{
-        background-color: #eeeeee;
-        transition-duration: 0.8s;
-    }
-
     .logo-mobile {
-        position: relative;
+        align-items: center;
         width: 100%;
+        top: -60%;
+        position: relative;
+        display: grid;
+        grid-template-columns: 87%;
+        justify-items: center;
     }
 
     .mobile {
-        position: absolute;
         border-radius: 50%;
         background-color: rgb(221, 220, 220);
         padding: 22px 32px;
         box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.253);
         transition-duration: 0.8s;
-        left: 45%;
-        top: -60%;
-        transform: translate(-50%);
-        align-self: center;
         z-index: 7;
+    }
+
+    .mobile:hover{
+        background-color: #f5f5f5;
+        transition-duration: 0.8s;
     }
 
 	nav .logo img {

@@ -5,19 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cardápio</title>
+
   <!-- Montserrat Font -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
+
+  <!-- CSS utilizado -->
   <link rel="stylesheet" href="css/cardapio.css">
   <link rel="stylesheet" href="css/menu_superior.css">
   <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/loader.css">
-  <link rel="shortcut icon" href="imagens/Sonya-Swarm-Fast-Food.ico" type="image/x-icon">
+
   <script
   src="https://kit.fontawesome.com/64d58efce2.js" 
   crossOrigin="anonymus">
 </script>
+
+  <!-- Ícones utilizados -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+  <title>Cardápio</title>
 </head>
 
 <body>
@@ -60,6 +69,11 @@
     <a href="login.html" class="user">
       <i class="ph ph-user"></i>
       <p>Login</p>
+    </a>
+
+    <a href="carrinho.html" class="carrinho">
+      <i class="ph ph-shopping-cart"></i>
+      <p>Cesta</p>
     </a>
     
   </header>
@@ -242,7 +256,7 @@
   </main>
 
   <!-- Parte da Janela de Modal -->
-  <dialog>
+  <dialog class="conteudo-descricao">
 
     <div class="image" data-name="porcoes">
       <span><img src="https://pestocozinhabar.com.br/wp-content/uploads/2022/06/couvert-1-300x300.jpg"
@@ -252,7 +266,7 @@
     <p>Pesto de manjericão, pesto de tomate seco, manteiga, torradas, focaccia e brioche</p>
       <div>
         <span>R$ 42,00</span>
-        <button>Ok</button>
+        <button class="btn-modal">Ok</button>
       </div>
     </div>
     

@@ -1,8 +1,8 @@
-dialog::backdrop {
+.conteudo-descricao::backdrop {
     background-color: rgb(0 0 0 / .5);
 }
 
-dialog {
+.conteudo-descricao {
     border: none;
     border-radius: .5rem;
     box-shadow: 0 0 1em rgb((0 0 0 / .3), green, blue);
@@ -14,7 +14,7 @@ dialog {
     position: fixed;
 }
 
-button {
+.btn-modal {
     background-color: #007bff;
     padding: 5px 25px;
     margin-top: 5px;
@@ -26,25 +26,26 @@ button {
     transition-duration: 0.6s;
 }
 
-button:hover {
-    background-color: white;
+.btn-modal:hover {
+    background-color: rgb(241, 241, 241);
     color: #007bff;
     transition-duration: 0.6s;
     cursor: pointer;
 }
 
-dialog .image img {
+.conteudo-descricao .image img {
     width: 100%;
     height: 100%;
     border-radius: 5px;
 }
-dialog .image span {
+
+.conteudo-descricao .image span {
     font-size: 25px !important;
     width: 200px;
 }
 
-@media (max-width: 500px) {
-    dialog{
-        max-width: 340px;
+@media (max-width: 450px) {
+    .conteudo-descricao .image{
+        max-width: 330px !important;
     }
 }

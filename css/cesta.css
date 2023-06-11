@@ -1,0 +1,218 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: linear-gradient(#ebeaea, rgb(243, 136, 74));
+	font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+	max-width: 530px;
+	margin: 100px auto;
+}
+
+.cart-container {
+	border-radius: 8px;
+	box-shadow: 0 5px 20px rgb(120, 120, 120);
+}
+
+.cart-body {
+	background-image: linear-gradient(#eff2f3,#cccccc)
+}
+
+.cart-item {
+	padding: 15px 20px 0 20px;
+}
+
+.cart-row {
+	display: flex;
+	padding: 15px 0;
+	flex-direction: row;
+	border-bottom: #ccc 1px solid;
+}
+
+.cart-row:last-of-type {
+	border-bottom: #bbb 1px solid;
+}
+
+.cart-row-cell {
+	height: 50px;
+}
+
+.cart-row .pic {
+	flex: 1;
+	
+	position: relative;
+}
+
+.cart-row .pic a {
+	top: -5px;
+	left: -5px;
+	width: 20px;
+	height: 20px;
+	color: #000;
+	font-size: 1em;
+	text-align:center;
+	position: absolute;
+	border-radius: 10px;
+	text-decoration: none;
+	display: inline-block;
+	background-color: #fff;
+	border: #dadada 1px solid;
+	box-shadow: 2px 2px 2px rgb(160,160,160);
+    transition-duration: 0.5s;
+}
+
+.cart-row .pic a:hover {
+    background-color: #c90404;
+    color: white;
+    transform: scale(1.3);
+    border: #dadada 1px solid;
+    transition-duration: 0.5s;
+}
+
+.cart-row .pic span {
+	width: 50px;
+	height: 50px;
+	border-radius: 30px;
+	display: inline-block;
+	background-size: contain;
+	background-image: url(https://pestocozinhabar.com.br/wp-content/uploads/2022/06/couvert-1-300x300.jpg);
+}
+
+.cart-row .desc {
+	flex: 3;
+}
+
+.cart-row .desc h5 {
+	margin: 10px 0 0;
+}
+
+.cart-row .desc p {
+	margin: 5px 0 0;
+	font-size: 0.75em;
+}
+
+.cart-row .quant {
+	flex: 2;
+}
+
+.cart-row .quant ul {
+	list-style: none;
+}
+
+.cart-row .quant ul li {
+	display: inline-block;
+	font-size: 1.5em;
+	padding: 0 5px;
+}
+
+.cart-row .quant ul li a {
+	color: #000;
+	text-decoration: none;
+    transition-duration: 0.5s;
+    padding: 0px 9px;
+    border-radius: 100%;
+}
+
+.cart-row .quant ul li a.subtrair {
+    padding: 0px 10px;
+}
+
+.cart-row .quant ul li a.soma:hover {
+    color: white;
+    background-color: #1c6e2a;
+    transform: scale(1.9);
+    box-shadow: 6px 9px 12px rgba(0, 0, 0, 0.247);
+    transition-duration: 0.5s;
+}
+
+.cart-row .quant ul li a.subtrair:hover {
+    color: white;
+    background-color: #c90404;
+    box-shadow: 6px 9px 12px rgba(0, 0, 0, 0.247);
+    transition-duration: 0.5s;
+}
+
+.cart-row .amount {
+	flex: 1;
+}
+
+.cart-row .amount p {
+	margin: 23px 0 0 0;
+}
+
+.cart-container .title {
+	color: #fff;
+	background: #e0591a;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+}
+
+.cart-container .title h3 {
+	margin: 0;
+	padding: 20px;
+}
+
+.cart-container .somatorio {
+	padding: 20px;
+	text-align: center;
+	background-color: #ccc;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+}
+
+.cart-container .somatorio button {
+	color: #fff;
+	border: none;
+	font-size: 1em;
+	padding: 5px 15px;
+	background: #e0591a;
+    border-radius: 3px;
+    transition-duration: 0.5s;
+}
+
+.btn-finalizar:hover {
+    animation: btn 0.8s infinite alternate ease-in-out;
+    transition-duration: 0.5s;
+    background-color: #e4500c;
+    cursor: pointer;
+}
+
+.cart-container .somatorio .totals {
+	display: flex;
+	flex-direction: row;
+}
+
+.cart-container .somatorio .totals p{
+	margin: 5px 0;
+}
+
+.cart-container .somatorio .total-label {
+	flex: 1;
+	text-align: left;
+}
+
+.cart-container .somatorio .total-amount {
+	flex: 1;
+	text-align: right;
+}
+
+@media (max-width:500px){
+    .cart-row .quant ul li {
+        display: inline-block;
+        font-size: 1.2em;
+        padding: 0 1px;
+    }
+}
+
+@keyframes btn {
+    0% {
+      transform: scale(1); 
+    } 100% {
+      transform: scale(1.05); 
+    }
+  }
