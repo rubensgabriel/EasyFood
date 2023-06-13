@@ -70,13 +70,14 @@
     line-height: 1.5;
 }
 
+.home-slider .swiper-pagination {
+    position: relative;
+}
+
 .swiper-pagination-bullet-active {
     background-color: #0770b6;
 }
 
-.swiper-pagination {
-    position: relative;
-}
 
 @media (max-width:500px){
     .home {
@@ -100,6 +101,7 @@
     .home .home-slider .slide {
         padding: 5rem 0;
     }
+    
 }
 
 @keyframes btn {

@@ -39,6 +39,12 @@ ul {
   margin: auto;
   margin-bottom: 30px;
   box-shadow: 5px 7px 9px rgba(0, 0, 0, 0.253);
+  transition-duration: 0.5s;
+}
+
+.input-search:hover {
+  transform: scale(1.1);
+  transition-duration: 0.5s;
 }
 
 .filter {
@@ -371,18 +377,18 @@ polyline:last-child {
     justify-items: center
   }
 
-  .gallery .image {
+  .image {
     max-width: 190px;
     transition: 0.6 ease-in-out;
     max-height: 280px;
     padding: 10px;
   }
 
-  .gallery  .image img {
+  .gallery .image img {
     max-height: 180px;
   }
 
-  .gallery  .image div span:first-child {
+  .image div span:first-child {
     font-size: 16px;
   }
 
