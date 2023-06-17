@@ -10,15 +10,15 @@ $sql = "Select * from usuario where email = '$email' and senha = '$senha'";
 $crud = new Crud();
 $result = $crud->read($sql);
 
-if($result !== false && $result->num_rows > 0)
+
+if(!empty($result))
 {
     // $_SESSION['NOME'] = $row['nome'];
     // $_SESSION['ID_USUARIO'] = $valida_usuario_array['id_usuario'];
-    // header("location:../home.html"); 
-    echo "aqui 1";
+     header("location:../home.html"); 
 }else{
-    // header("location:../index.html"); 
-    echo "aqui 2";
+     header("location:../index.html"); 
+
 }
 
 ?>

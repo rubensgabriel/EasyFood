@@ -11,7 +11,7 @@
  Target Server Version : 100428
  File Encoding         : 65001
 
- Date: 17/06/2023 14:45:15
+ Date: 17/06/2023 16:00:43
 */
 
 SET NAMES utf8mb4;
@@ -153,13 +153,14 @@ CREATE TABLE `tipoentrega`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario`  (
-  `CPF` int NOT NULL AUTO_INCREMENT,
+  `CPF` int NOT NULL,
   `NOME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `NASCIMENTO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `TELEFONE` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `ENDERECO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `SENHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`CPF`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2147483648 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
