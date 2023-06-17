@@ -11,7 +11,7 @@
  Target Server Version : 100428
  File Encoding         : 65001
 
- Date: 13/06/2023 12:05:50
+ Date: 17/06/2023 14:45:15
 */
 
 SET NAMES utf8mb4;
@@ -33,11 +33,7 @@ CREATE TABLE `cardapio`  (
   INDEX `CATEGORIA`(`CATEGORIA` ASC) USING BTREE,
   CONSTRAINT `cardapio_ibfk_1` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `cardapio_ibfk_2` FOREIGN KEY (`CATEGORIA`) REFERENCES `categoria` (`CODCATEGORIA`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of cardapio
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for carrinho
@@ -57,11 +53,7 @@ CREATE TABLE `carrinho`  (
   INDEX `CNPJ`(`CNPJ` ASC) USING BTREE,
   CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`CPF`) REFERENCES `usuario` (`CPF`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of carrinho
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for categoria
@@ -71,11 +63,7 @@ CREATE TABLE `categoria`  (
   `CODCATEGORIA` int NOT NULL AUTO_INCREMENT,
   `DESCRICAO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`CODCATEGORIA`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of categoria
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for endereco
@@ -96,11 +84,7 @@ CREATE TABLE `endereco`  (
   INDEX `CNPJ`(`CNPJ` ASC) USING BTREE,
   CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`CPF`) REFERENCES `usuario` (`CPF`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `endereco_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of endereco
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for pedidos
@@ -125,11 +109,7 @@ CREATE TABLE `pedidos`  (
   CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `pedidos_ibfk_3` FOREIGN KEY (`ENDERECO`) REFERENCES `endereco` (`CODENDERECO`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `pedidos_ibfk_4` FOREIGN KEY (`TIPOENTREGA`) REFERENCES `tipoentrega` (`CODTIPO`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of pedidos
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for restauramte
@@ -143,11 +123,7 @@ CREATE TABLE `restauramte`  (
   `SENHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `TIPOCOZINHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`CNPJ`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of restauramte
--- ----------------------------
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for reviews
@@ -160,11 +136,7 @@ CREATE TABLE `reviews`  (
   PRIMARY KEY (`CODREVIWS`) USING BTREE,
   INDEX `CPF`(`CPF` ASC) USING BTREE,
   CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`CPF`) REFERENCES `usuario` (`CPF`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of reviews
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for tipoentrega
@@ -174,11 +146,7 @@ CREATE TABLE `tipoentrega`  (
   `CODTIPO` int NOT NULL,
   `DESCRICAO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`CODTIPO`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of tipoentrega
--- ----------------------------
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Table structure for usuario
@@ -192,10 +160,6 @@ CREATE TABLE `usuario`  (
   `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `SENHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`CPF`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
-
--- ----------------------------
--- Records of usuario
--- ----------------------------
+) ENGINE = InnoDB AUTO_INCREMENT = 2147483648 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 SET FOREIGN_KEY_CHECKS = 1;
