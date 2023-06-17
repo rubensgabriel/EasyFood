@@ -1,4 +1,6 @@
-
+<?php
+require_once('./controller/validar_sessao.php');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -69,7 +71,7 @@
 
     <a href="login.html" class="user">
       <i class="ph ph-user"></i>
-      <p>Login</p>
+      <p><?php echo $usuario;?></p>
     </a>
 
     <a href="carrinho.html" class="carrinho">

@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once("../controller/conexao.php");
 require_once("../model/crud.php");
 
@@ -11,14 +12,15 @@ $crud = new Crud();
 $result = $crud->read($sql);
 
 
-if(!empty($result))
-{
-    // $_SESSION['NOME'] = $row['nome'];
-    // $_SESSION['ID_USUARIO'] = $valida_usuario_array['id_usuario'];
-     header("location:../home.html"); 
+if(!empty($result)){
+ foreach($result as $key => $row){
+ $_SESSION['NOME'] = $row['NOME'];
+ $_SESSION['ID_USUARIO'] = $row['CODUSUARIO'];
+ header("location:../home.php"); 
+ }   
 }else{
-     header("location:../index.html"); 
-
+ $_SESSION['menssagem'] = 'E-mail ou senha incorretos.';
+ header("location:../index.php"); 
 }
 
 ?>
