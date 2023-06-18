@@ -39,12 +39,12 @@ require_once('./controller/validar_sessao.php');
 
       <ul class="nav-list">
         <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link" href="home.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="cardapio.html">Cardápio</a>
         </li>
-        <a class="logo desktop" href="home.html">
+        <a class="logo desktop" href="home.php">
           <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
         </a>
         <li class="nav-item">
