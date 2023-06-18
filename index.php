@@ -1,3 +1,8 @@
+<?php
+ session_start();       
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -30,15 +35,15 @@
                     <!-- Inicio alerta -->
                     <?php
                         //start session
-                        session_start();           
-                        include_once('./model/crud.php');            
-                        $crud = new Crud();            
-                        if(isset($_SESSION['mensagem'])){
+                             
+                        if(isset($_SESSION['menssagem'])){
+                            $cor = $_SESSION['menssagem']['cor'];
+                            $mensagem = $_SESSION['menssagem']['menssagem']
                     ?>
-                     <div class="">
-                        <?php echo $_SESSION['mensagem']; ?>
+                     <div style="color:<?= $cor ?>">
+                        <?php echo $mensagem;?>
                     </div>
-                    <?php unset($_SESSION['mensagem']); } ?>
+                    <?php unset($_SESSION['menssagem']); } ?>
                     <!-- Fim alerta -->
                     <p class="social-text">Ou entre por uma outra Conta</p>
                     <div class="social-media">

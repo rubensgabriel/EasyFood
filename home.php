@@ -71,7 +71,7 @@ require_once('./controller/validar_sessao.php');
 
     <a href="login.html" class="user">
       <i class="ph ph-user"></i>
-      <p><?php echo $usuario;?></p>
+      <p><?php echo strstr($usuario, ' ', true);?></p>
     </a>
 
     <a href="carrinho.html" class="carrinho">

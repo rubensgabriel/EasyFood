@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include('conexao.php');
 include('../model/crud.php');
 
@@ -14,9 +14,9 @@ $crud = new Crud();
 $result = $crud->execute($sql);
 
 if($result){
-    $_SESSION['menssagem'] = 'Cliente adicionado com sucesso!!';
+    $_SESSION['menssagem'] = array('menssagem' => 'Cliente adicionado com sucesso!!', 'cor' =>'green');
 }else{
-    $_SESSION['menssagem'] = 'Não é possível adicionar o cliente'; 
+    $_SESSION['menssagem'] = array('menssagem' => 'Não é possível adicionar o cliente', 'cor' =>'red');
 }
 
 header('location:../index.php');
