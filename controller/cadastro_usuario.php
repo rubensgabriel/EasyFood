@@ -13,10 +13,10 @@ $sql = "INSERT INTO `usuario` ( `NOME`, `TELEFONE`, `ENDERECO`, `EMAIL`, `SENHA`
 $crud = new Crud();
 $result = $crud->execute($sql);
 
-// if($result){
-//     $_SESSION['menssagem'] = 'Cliente adicionado com sucesso!!';
-// }else{
-//     $_SESSION['menssagem'] = 'Não é possível adicionar o cliente'; 
-// }
+if($result){
+    $_SESSION['menssagem'] = 'Cliente adicionado com sucesso!!';
+}else{
+    $_SESSION['menssagem'] = 'Não é possível adicionar o cliente'; 
+}
 
-header('location: index.php');
+header('location:../index.php');

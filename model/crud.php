@@ -1,6 +1,7 @@
 <!--Crud.php-->
 <?php
-include_once('../controller/conexao.php');
+
+include_once('controller/conexao.php');
   
 class Crud extends Dbconexao
 {

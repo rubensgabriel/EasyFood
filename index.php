@@ -1,7 +1,3 @@
-<?php
-
-
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -31,6 +27,19 @@
                         <input type="password" placeholder="Senha" name="senha">
                     </div>
                     <input type="submit" value="Login" class="btn solid">
+                    <!-- Inicio alerta -->
+                    <?php
+                        //start session
+                        session_start();           
+                        include_once('./model/crud.php');            
+                        $crud = new Crud();            
+                        if(isset($_SESSION['mensagem'])){
+                    ?>
+                     <div class="">
+                        <?php echo $_SESSION['mensagem']; ?>
+                    </div>
+                    <?php unset($_SESSION['mensagem']); } ?>
+                    <!-- Fim alerta -->
                     <p class="social-text">Ou entre por uma outra Conta</p>
                     <div class="social-media">
                         <a href="#" class="social-icon">
