@@ -40,7 +40,7 @@
                             $mensagem = $_SESSION['menssagem']['menssagem'];
                     ?>
                      <div style="color:<?= $cor ?>">
-                        <?php echo $_SESSION['menssagem'];?>
+                        <?php echo $mensagem?>
                     </div>
                     <?php unset($_SESSION['menssagem']); } ?>
                     <!-- Fim alerta -->
