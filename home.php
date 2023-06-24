@@ -1,5 +1,7 @@
 <?php
 require_once('./controller/validar_sessao.php');
+require_once('./controller/listar_promocao.php');
+require_once('./controller/listar_reviews.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -71,7 +73,7 @@ require_once('./controller/validar_sessao.php');
 
     <a href="login.html" class="user">
       <i class="ph ph-user"></i>
-      <p><?php echo $usuario;?></p>
+      <p><?php echo strstr($usuario, ' ', true);?></p>
     </a>
 
     <a href="carrinho.html" class="carrinho">
@@ -80,148 +82,65 @@ require_once('./controller/validar_sessao.php');
     </a>
   </header>
   <main>
-    <section class="home" id="home">
 
-      <div class="swiper-container home-slider">
-  
-          <div class="swiper-wrapper wrapper">
-              
-              <div class="swiper-slide  slide">
-                  <div class="content">
-                      <span>Promoção do dia</span>
-                      <h3>Porçoes</h3>
-                      <p>Receba pedidos 100% automatizados e sem pagar comissões para marketplaces. E não se esqueça: se você acabou de começar ou se sua operação está em crescimento, conte com a gente para somarmos nessa caminhada!</p>
-                      <a href="" class="btn">Peça Agora</a>
-                  </div>
-                  <div class="image">
-                      <img src="https://images.unsplash.com/photo-1589010588553-46e8e7c21788?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=960&q=80" alt="">
-                  </div>
-              </div>
-  
-              <div class="swiper-slide slide">
-                  <div class="content">
-                      <span>Promoção do dia</span>
-                      <h3>Fried chicken</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis unde tempore dignissimos illo et. Error, vero. Reiciendis odit voluptate excepturi libero culpa qui temporibus ipsum dignissimos, provident, molestias ullam obcaecati!</p>
-                      <a href="" class="btn">Peça Agora</a>
-                  </div>
-                  <div class="image">
-                      <img src="https://img.cybercook.com.br/receitas/216/frango-assado-para-microondas-1.jpeg" alt="">
-                  </div>
-              </div>
-  
-              <div class="swiper-slide slide">
-                  <div class="content">
-                      <span>Promoção da semana</span>
-                      <h3>Fast Food</h3>
-                      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis unde tempore dignissimos illo et. Error, vero. Reiciendis odit voluptate excepturi libero culpa qui temporibus ipsum dignissimos, provident, molestias ullam obcaecati!</p>
-                      <a href="" class="btn">Peça Agora</a>
-                  </div>
-                  <div class="image">
-                      <img src="https://media.seudinheiro.com/uploads/2020/09/shutterstock_247575118-scaled.jpg" alt="">
-                  </div>
-              </div>
-  
-          </div>
+  <section class="home" id="home">
 
-          <div class="swiper-pagination"></div>
+<div class="swiper-container home-slider">
 
-      </div>
-  </section>
+    <div class="swiper-wrapper wrapper">
+      
+    <?php foreach ($resultp as $key => $row) {?>
+        <div class="swiper-slide  slide">
+            <div class="content">
+                <span>Promoção do dia</span>
+                <h3><?php echo $row['TITULO']; ?></h3>
+                <p><?php echo $row['DESCRICAO']; ?></p>
+                <a href="./carrinho.php?codpromocao=<?php echo $row['CODPROMOCAO']; ?>" class="btn">Peça Agora</a>
+            </div>
+            <div class="image">
+                <img src="<?php echo $row['IMAGEM']; ?>" alt="">
+            </div>
+        </div>
+     <?php }?>
 
-    <section class="feedback">
+    </div>
+
+    <div class="swiper-pagination"></div>
+
+</div>
+</section>
+
+  
+
+
+<section class="feedback">
       <div class="content">
         <h1>Compartilhe sua Opinião Conosco</h1>
         <p>Estamos sempre comprometidos com o bem estar de nossos clientes, portanto a opinião de vocês é sempre bem vinda. Mande uma mensagem pra nós na seção de Feedback e nos ajude a melhorar seu atendimento</p>
         <a href="#">Mandar Feedback</a>
       </div>
       <img src="imagens/speak.svg" alt="">
-    </section>
-  </main>
+</section>
+</main>
 
-  <section class="home cards-reviews" id="home">
+
+<section class="home cards-reviews" id="home">
     <h2>Reviews dos Clientes</h2>
     <div class="swiper-container home-slider">
 
         <div class="swiper-wrapper wrapper">
-            
+
+        <?php foreach ($result as $key => $row) { ?>
             <div class="swiper-slide slide">
                 <div class="card-cliente">
                   <div class="usuario-review">
-                    <img src="imagens/user1.png" alt="">
-                    <h3>Annie Jannuary</h3>
+                    <img src="<?php echo $row['IMAGEM']; ?>" alt="">
+                    <h3><?php echo $row['NOME']; ?></h3>
                   </div>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
+                    <p><?php echo $row['DESCRICAO']; ?></p>
                 </div>
-
-                <div class="card-cliente">
-                  <div class="usuario-review">
-                    <img src="imagens/user2.png" alt="">
-                    <h3>Julia Fernandes</h3>
-                  </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-              </div>
-
-              <div class="card-cliente">
-                <div class="usuario-review">
-                  <img src="imagens/user3.png" alt="">
-                  <h3>Felipe Santos</h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
             </div>
-            </div>
-
-            <div class="swiper-slide slide">
-              <div class="card-cliente">
-                <div class="usuario-review">
-                  <img src="imagens/user1.png" alt="">
-                  <h3>Annie Jannuary</h3>
-                </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-              </div>
-
-              <div class="card-cliente">
-                <div class="usuario-review">
-                  <img src="imagens/user2.png" alt="">
-                  <h3>Julia Fernandes</h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-            </div>
-
-            <div class="card-cliente">
-              <div class="usuario-review">
-                <img src="imagens/user3.png" alt="">
-                <h3>Felipe Santos</h3>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-          </div>
-            </div>
-
-            <div class="swiper-slide slide">
-              <div class="card-cliente">
-                <div class="usuario-review">
-                  <img src="imagens/user1.png" alt="">
-                  <h3>Annie Jannuary</h3>
-                </div>
-                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-              </div>
-
-              <div class="card-cliente">
-                <div class="usuario-review">
-                  <img src="imagens/user2.png" alt="">
-                  <h3>Julia Fernandes</h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-            </div>
-
-            <div class="card-cliente">
-              <div class="usuario-review">
-                <img src="imagens/user3.png" alt="">
-                <h3>Felipe Santos</h3>
-              </div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur fugiat officia excepturi cupiditate illo, eius corrupti quisquam iure voluptatum numquam voluptatem deleniti harum odit perspiciatis architecto voluptatibus eos qui eaque?</p>
-          </div>
-            </div>
+            <?php }?>   
 
         </div>
 
@@ -229,6 +148,7 @@ require_once('./controller/validar_sessao.php');
 
     </div>
 </section>
+
 
 <!-- Parte do Carregamento -->
 <div class="loader-container">
