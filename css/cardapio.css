@@ -106,6 +106,11 @@ ul {
   cursor: pointer;
   border-radius: 5px;
   transition: all 0.3s ease;
+  align-self: center;
+}
+
+.imagem-cardapio {
+  width: max-content;
 }
 
 .gallery .image.hide {
@@ -126,13 +131,18 @@ ul {
   max-height: 450px;
 }
 
-.gallery .image span {
+.gallery .image .imagem-cardapio {
   display: flex;
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;
   max-height: 50%;
+  text-align: center;
+}
+
+.gallery .image .imagem-cardapio img {
+  max-width: 280px;
 }
 
 .image h2 {
@@ -171,8 +181,9 @@ ul {
   --tick: var(--background);
   position: relative;
   border: none;
+  top: -5px;
   background: none;
-  padding: 8px 10px 0px 15px;
+  padding: 8px 10px 8px 15px;
   border-radius: 8px;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
@@ -377,15 +388,19 @@ polyline:last-child {
     justify-items: center
   }
 
-  .image {
+  .gallery .image {
     max-width: 190px;
     transition: 0.6 ease-in-out;
     max-height: 280px;
     padding: 10px;
   }
 
-  .gallery .image img {
-    max-height: 180px;
+  .gallery .image .imagem-cardapio {
+    max-height: 135px;
+  }
+
+  .gallery .image .imagem-cardapio img {
+    max-width: 200px;
   }
 
   .image div span:first-child {
@@ -412,7 +427,7 @@ polyline:last-child {
     font-size: 12px !important;
   }
 
-  .gallery  .image .compra {
+  .gallery .image .compra {
     display: grid;
     grid-template-rows: 35px 10px;
   }
@@ -428,9 +443,17 @@ polyline:last-child {
     margin: 15px;
     justify-items: center
   }
-  
-  .image img {
-    max-height: 170px;
+  .gallery .image {
+    max-width: 200px !important;
+    max-height: 310px;
+  }
+  .gallery .image .imagem-cardapio {
+    max-width: 200px;
+    max-height: 160px;
+  }
+
+  .gallery .image .imagem-cardapio img {
+    max-width: 200px;
   }
 }
 
@@ -441,12 +464,17 @@ polyline:last-child {
   }
 
   .gallery .image {
-    width: 180px;
+    width: 170px;
     height: 265px;
   }
 
-  .gallery .image img {
-    max-height: 160px;
+  .gallery .image .imagem-cardapio {
+    max-width: 190px !important;
+    max-height: 125px;
+  }
+
+  .imagem-cardapio img {
+    width: 160px;
   }
 }
 

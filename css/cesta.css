@@ -44,7 +44,6 @@ body {
 
 .cart-row .pic {
 	flex: 1;
-	
 	position: relative;
 }
 
@@ -207,6 +206,10 @@ body {
         font-size: 1.2em;
         padding: 0 1px;
     }
+
+	.cart-row .quant ul li a.soma:hover {
+		padding: 1px 9px;
+	}
 }
 
 @keyframes btn {
