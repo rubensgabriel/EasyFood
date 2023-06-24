@@ -1,5 +1,5 @@
 <?php
-require_once('C:\xampp\htdocs\EasyFood\model\crud.php');
+require_once('C:\xampp2\htdocs\Trabalho doida\EasyFood\model\crud.php');
 $data = getdate();
 $data1  = date('Y-m-d',$data[0]);
 

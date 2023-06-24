@@ -38,7 +38,7 @@
                              
                         if(isset($_SESSION['menssagem'])){
                             $cor = $_SESSION['menssagem']['cor'];
-                            $mensagem = $_SESSION['menssagem']['menssagem']
+                            $mensagem = $_SESSION['menssagem']['menssagem'];
                     ?>
                      <div style="color:<?= $cor ?>">
                         <?php echo $mensagem;?>

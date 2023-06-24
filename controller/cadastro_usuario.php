@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('conexao.php');
-include('../model/crud.php');
+include('C:\xampp2\htdocs\Trabalho doida\EasyFood/model/crud.php');
 
 $email =    ($_POST['Email']);
 $telefone = ($_POST['Telefone']);
@@ -14,9 +14,9 @@ $crud = new Crud();
 $result = $crud->execute($sql);
 
 if($result){
-    $_SESSION['menssagem'] = 'Cliente adicionado com sucesso!!';
+    $_SESSION['menssagem'] = array('menssagem'=>'Cliente adicionado com sucesso!!', 'cor' =>'green');
 }else{
-    $_SESSION['menssagem'] = 'Não é possível adicionar o cliente';
+    $_SESSION['menssagem'] = array('menssagem'=>'Não é possível adicionar o cliente', 'cor' =>'red');
 }
 
 header('location:../index.php');

@@ -3,17 +3,22 @@ require_once('./controller/validar_sessao.php');
 require_once('./model/crud.php');
 if(isset($_GET['codpromocao'])){
 $codpromocao = $_GET['codpromocao'];
-$sql = "SELECT * FROM promocao WHERE CODPROMOCAO =$codpromocao";
+$sql = "SELECT p.*, FORMAT(p.TAXA,2,'de_DE') AS TAXAF FROM promocao p WHERE p.CODPROMOCAO='$codpromocao'";
 $crud = new Crud();
 $resultcp = $crud->read($sql);
+
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
+   
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -115,7 +120,7 @@ $resultcp = $crud->read($sql);
                             <ul>
                                 <li><a class="subtrair" href="#">-</a></li>
 
-                                <li>2</li>
+                                <li class="quantidade">2</li>
                                 
                                 <li><a class="soma" href="#">+</a></li>
                             </ul>
@@ -149,7 +154,7 @@ $resultcp = $crud->read($sql);
                     
                     <p class="total-label">Taxa</p>
 
-                    <p class="total-amount">R$<?php echo $row['TAXA'];?></p>
+                    <p class="total-amount">R$<?php echo $row['TAXAF'];?></p>
 
                 </div>
 
@@ -175,6 +180,11 @@ $resultcp = $crud->read($sql);
   <img src="imagens/loader-food.gif" alt="">
 </div>
 <script src="js/load.js"></script>
+<script>
+
+  var quantidade = $('.quantidade').text();
+
+  </script>
 
 </body>
 </html>

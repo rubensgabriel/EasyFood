@@ -5,6 +5,6 @@ if(isset($_SESSION['NOME'])){
   $id_usuario = $_SESSION['ID_USUARIO'];
 }
 else{
-  header('location:./index.html');
+  header('location:../index.php');
 }
 ?>
