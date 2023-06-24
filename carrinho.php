@@ -1,5 +1,12 @@
 <?php
 require_once('./controller/validar_sessao.php');
+require_once('./model/crud.php');
+if(isset($_GET['codpromocao'])){
+$codpromocao = $_GET['codpromocao'];
+$sql = "SELECT * FROM promocao WHERE CODPROMOCAO =$codpromocao";
+$crud = new Crud();
+$resultcp = $crud->read($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -81,12 +88,12 @@ require_once('./controller/validar_sessao.php');
 
             </div>
 
-            <div class="cart-body">
 
+            <div class="cart-body">
                 <div class="cart-item">
 
+                <?php foreach ($resultcp as $key => $row) {?>
                     <div class="cart-row">
-
                         <div class="cart-row-cell pic">
 
                             <a href="#">-</a>
@@ -97,9 +104,9 @@ require_once('./controller/validar_sessao.php');
 
                         <div class="cart-row-cell desc">
                             
-                            <h5>Couvert da Casa</h5>
+                            <h5><?php echo $row['TITULO'];?></h5>
 
-                            <p>#41345755</p>
+                            <p><?php echo $row['DESCRICAO'];?></p>
 
                         </div>
 
@@ -117,90 +124,12 @@ require_once('./controller/validar_sessao.php');
 
                         <div class="cart-row-cell amount">
 
-                            <p>R$13,87</p>
+                            <p><?php echo $row['VALOR'];?></p>
 
                         </div>	
                     
                     </div>
-
-                    <div class="cart-row">
-
-                        <div class="cart-row-cell pic">
-
-                            <a href="#">-</a>
-                            
-                            <span></span>
-                        
-                        </div>
-
-                        <div class="cart-row-cell desc">
-                            
-                            <h5>Couvert da Casa</h5>
-
-                            <p>#41345755</p>
-
-                        </div>
-
-                        <div class="cart-row-cell quant">
-
-                            <ul>
-                                <li><a class="subtrair" href="#">-</a></li>
-
-                                <li>2</li>
-                                
-                                <li><a class="soma" href="#">+</a></li>
-                            </ul>
-
-                        </div>
-
-                        <div class="cart-row-cell amount">
-
-                            <p>R$13,87</p>
-
-                        </div>	
-                    
-                    </div>
-
-                    <div class="cart-row">
-
-                        <div class="cart-row-cell pic">
-
-                            <a href="#">-</a>
-                            
-                            <span></span>
-                        
-                        </div>
-
-                        <div class="cart-row-cell desc">
-                            
-                            <h5>Couvert da Casa</h5>
-
-                            <p>#41345755</p>
-
-                        </div>
-
-                        <div class="cart-row-cell quant">
-
-                            <ul>
-                                <li><a class="subtrair" href="#">-</a></li>
-
-                                <li>2</li>
-                                
-                                <li><a class="soma" href="#">+</a></li>
-                            </ul>
-
-                        </div>
-
-                        <div class="cart-row-cell amount">
-
-                            <p>R$13,87</p>
-
-                        </div>	
-                    
-                    </div>
-
-
-
+                    <?php }?>
                 </div>
             
             </div>
@@ -220,7 +149,7 @@ require_once('./controller/validar_sessao.php');
                     
                     <p class="total-label">Taxa</p>
 
-                    <p class="total-amount">R$2,00</p>
+                    <p class="total-amount">R$<?php echo $row['TAXA'];?></p>
 
                 </div>
 

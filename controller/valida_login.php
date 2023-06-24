@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once("../controller/conexao.php");
+require_once("conexao.php");
 require_once("../model/crud.php");
 
 $email = $_POST['email'];

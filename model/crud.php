@@ -1,7 +1,7 @@
 <!--Crud.php-->
 <?php
 
-include_once('controller/conexao.php');
+include_once('C:\xampp\htdocs\EasyFood/controller/conexao.php');
   
 class Crud extends Dbconexao
 {
