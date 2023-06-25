@@ -1,186 +1,194 @@
 /*
- Navicat Premium Data Transfer
+Navicat MySQL Data Transfer
 
- Source Server         : ThulioBatista
- Source Server Type    : MySQL
- Source Server Version : 100428
- Source Host           : localhost:3306
- Source Schema         : easyfood
+Source Server         : ThulioBatista
+Source Server Version : 50505
+Source Host           : localhost:3306
+Source Database       : easyfood
 
- Target Server Type    : MySQL
- Target Server Version : 100428
- File Encoding         : 65001
+Target Server Type    : MYSQL
+Target Server Version : 50505
+File Encoding         : 65001
 
- Date: 21/06/2023 12:02:16
+Date: 2023-06-25 20:06:01
 */
 
-SET NAMES utf8mb4;
-SET FOREIGN_KEY_CHECKS = 0;
+SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
 -- Table structure for cardapio
 -- ----------------------------
 DROP TABLE IF EXISTS `cardapio`;
-CREATE TABLE `cardapio`  (
-  `CODCARDAPIO` int NOT NULL AUTO_INCREMENT,
-  `CNPJ` int NULL DEFAULT NULL,
-  `DESCRICAO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `VALOR` decimal(18, 2) NULL DEFAULT 0.00,
-  `TEMP_PREPARO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `CATEGORIA` int NULL DEFAULT NULL,
+CREATE TABLE `cardapio` (
+  `CODCARDAPIO` int(11) NOT NULL AUTO_INCREMENT,
+  `CNPJ` int(11) DEFAULT NULL,
+  `TITULO` varchar(50) DEFAULT '',
+  `DESCRICAO` varchar(50) DEFAULT '',
+  `VALOR` decimal(18,2) DEFAULT 0.00,
+  `TEMP_PREPARO` varchar(50) DEFAULT NULL,
+  `CATEGORIA` int(11) DEFAULT NULL,
+  `QUANTIDADE` int(11) DEFAULT NULL,
+  `URL` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`CODCARDAPIO`) USING BTREE,
-  INDEX `CNPJ`(`CNPJ` ASC) USING BTREE,
-  INDEX `CATEGORIA`(`CATEGORIA` ASC) USING BTREE,
-  CONSTRAINT `cardapio_ibfk_1` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `cardapio_ibfk_2` FOREIGN KEY (`CATEGORIA`) REFERENCES `categoria` (`CODCATEGORIA`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of cardapio
--- ----------------------------
+  KEY `CNPJ` (`CNPJ`) USING BTREE,
+  KEY `CATEGORIA` (`CATEGORIA`) USING BTREE,
+  CONSTRAINT `cardapio_ibfk_1` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`),
+  CONSTRAINT `cardapio_ibfk_2` FOREIGN KEY (`CATEGORIA`) REFERENCES `categoria` (`CODCATEGORIA`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for carrinho
 -- ----------------------------
 DROP TABLE IF EXISTS `carrinho`;
-CREATE TABLE `carrinho`  (
-  `CODCARRINHO` int NOT NULL AUTO_INCREMENT,
-  `CODUSUARIO` int NULL DEFAULT NULL,
-  `CNPJ` int NULL DEFAULT NULL,
-  `QUANTIDADE` int NULL DEFAULT NULL,
-  `SUBTOTAL` float NULL DEFAULT NULL,
-  `DESCRIÇÃO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TAXAENTREGA` float NULL DEFAULT NULL,
-  `TOTAL` float NULL DEFAULT NULL,
+CREATE TABLE `carrinho` (
+  `CODCARRINHO` int(11) NOT NULL AUTO_INCREMENT,
+  `CODUSUARIO` int(11) DEFAULT NULL,
+  `CNPJ` int(11) DEFAULT NULL,
+  `QUANTIDADE` int(11) DEFAULT NULL,
+  `SUBTOTAL` float DEFAULT NULL,
+  `DESCRIÇÃO` varchar(50) DEFAULT NULL,
+  `TAXAENTREGA` float DEFAULT NULL,
+  `TOTAL` float DEFAULT NULL,
   PRIMARY KEY (`CODCARRINHO`) USING BTREE,
-  INDEX `CPF`(`CODUSUARIO` ASC) USING BTREE,
-  INDEX `CNPJ`(`CNPJ` ASC) USING BTREE,
-  CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of carrinho
--- ----------------------------
+  KEY `CPF` (`CODUSUARIO`) USING BTREE,
+  KEY `CNPJ` (`CNPJ`) USING BTREE,
+  CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`),
+  CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for categoria
 -- ----------------------------
 DROP TABLE IF EXISTS `categoria`;
-CREATE TABLE `categoria`  (
-  `CODCATEGORIA` int NOT NULL AUTO_INCREMENT,
-  `DESCRICAO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+CREATE TABLE `categoria` (
+  `CODCATEGORIA` int(11) NOT NULL AUTO_INCREMENT,
+  `DESCRICAO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CODCATEGORIA`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records of categoria
+-- Table structure for compra
 -- ----------------------------
+DROP TABLE IF EXISTS `compra`;
+CREATE TABLE `compra` (
+  `CODCOMPRA` int(11) NOT NULL AUTO_INCREMENT,
+  `CODUSUARIO` int(11) DEFAULT NULL,
+  `CNPJ` int(11) DEFAULT NULL,
+  `TITULO` varchar(250) DEFAULT NULL,
+  `DESCRICAO` varchar(250) DEFAULT NULL,
+  `VALOR` decimal(18,2) DEFAULT 0.00,
+  `QUANTIDADE` int(11) DEFAULT NULL,
+  `TAXA` float(7,2) DEFAULT 0.00,
+  PRIMARY KEY (`CODCOMPRA`),
+  KEY `CODUSUARIO` (`CODUSUARIO`),
+  KEY `CNPJ` (`CNPJ`),
+  CONSTRAINT `compra_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`),
+  CONSTRAINT `compra_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Table structure for pedidos
 -- ----------------------------
 DROP TABLE IF EXISTS `pedidos`;
-CREATE TABLE `pedidos`  (
-  `CODPEDIDOS` int NOT NULL AUTO_INCREMENT,
-  `CODUSUARIO` int NULL DEFAULT NULL,
-  `CNPJ` int NULL DEFAULT NULL,
-  `DTHINSERT` timestamp NOT NULL DEFAULT current_timestamp,
-  `ESTATUS` int NULL DEFAULT NULL,
-  `DESCRIÇÃO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TOTAL` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TIPOENTREGA` int NULL DEFAULT NULL,
+CREATE TABLE `pedidos` (
+  `CODPEDIDOS` int(11) NOT NULL AUTO_INCREMENT,
+  `CODUSUARIO` int(11) DEFAULT NULL,
+  `CNPJ` int(11) DEFAULT NULL,
+  `DTHINSERT` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ESTATUS` int(11) DEFAULT NULL,
+  `DESCRIÇÃO` varchar(100) DEFAULT NULL,
+  `TOTAL` varchar(20) DEFAULT NULL,
+  `TIPOENTREGA` int(11) DEFAULT NULL,
   PRIMARY KEY (`CODPEDIDOS`) USING BTREE,
-  INDEX `CPF`(`CODUSUARIO` ASC) USING BTREE,
-  INDEX `CNPJ`(`CNPJ` ASC) USING BTREE,
-  INDEX `TIPOENTREGA`(`TIPOENTREGA` ASC) USING BTREE,
-  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-  CONSTRAINT `pedidos_ibfk_4` FOREIGN KEY (`TIPOENTREGA`) REFERENCES `tipoentrega` (`CODTIPO`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+  KEY `CPF` (`CODUSUARIO`) USING BTREE,
+  KEY `CNPJ` (`CNPJ`) USING BTREE,
+  KEY `TIPOENTREGA` (`TIPOENTREGA`) USING BTREE,
+  CONSTRAINT `pedidos_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`),
+  CONSTRAINT `pedidos_ibfk_2` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`),
+  CONSTRAINT `pedidos_ibfk_4` FOREIGN KEY (`TIPOENTREGA`) REFERENCES `tipoentrega` (`CODTIPO`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
--- Records of pedidos
+-- Table structure for promocao
 -- ----------------------------
+DROP TABLE IF EXISTS `promocao`;
+CREATE TABLE `promocao` (
+  `CODPROMOCAO` int(11) NOT NULL AUTO_INCREMENT,
+  `CNPJ` int(11) DEFAULT NULL,
+  `TITULO` varchar(50) DEFAULT '',
+  `DESCRICAO` varchar(250) DEFAULT '',
+  `VALOR` decimal(18,2) DEFAULT 0.00,
+  `QUANTIDADE` int(11) DEFAULT NULL,
+  `TEMPOPREPARO` int(11) DEFAULT NULL,
+  `IMAGEM` varchar(250) DEFAULT '',
+  `DTHRINSERT` date NOT NULL,
+  `TAXA` float(7,2) DEFAULT 0.00,
+  PRIMARY KEY (`CODPROMOCAO`),
+  KEY `CNPJ` (`CNPJ`),
+  CONSTRAINT `promocao_ibfk_1` FOREIGN KEY (`CNPJ`) REFERENCES `restauramte` (`CNPJ`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- ----------------------------
 -- Table structure for restauramte
 -- ----------------------------
 DROP TABLE IF EXISTS `restauramte`;
-CREATE TABLE `restauramte`  (
-  `CNPJ` int NOT NULL,
-  `RAZAOSOCIAL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TELEFONE` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `ENDEREÇO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `COMPLEMENTO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `BAIRRO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `CIDADE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `UF` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `CEP` int NULL DEFAULT NULL,
-  `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `SENHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TIPOCOZINHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+CREATE TABLE `restauramte` (
+  `CNPJ` int(11) NOT NULL,
+  `RAZAOSOCIAL` varchar(50) DEFAULT NULL,
+  `TELEFONE` varchar(50) DEFAULT NULL,
+  `ENDEREÇO` varchar(50) DEFAULT NULL,
+  `COMPLEMENTO` varchar(20) DEFAULT NULL,
+  `BAIRRO` varchar(20) DEFAULT NULL,
+  `CIDADE` varchar(20) DEFAULT NULL,
+  `UF` char(2) DEFAULT NULL,
+  `CEP` int(11) DEFAULT NULL,
+  `EMAIL` varchar(50) DEFAULT NULL,
+  `SENHA` varchar(50) DEFAULT NULL,
+  `TIPOCOZINHA` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CNPJ`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of restauramte
--- ----------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for reviews
 -- ----------------------------
 DROP TABLE IF EXISTS `reviews`;
-CREATE TABLE `reviews`  (
-  `CODREVIWS` int NOT NULL AUTO_INCREMENT,
-  `CODUSUARIO` int NULL DEFAULT NULL,
-  `DESCRICAO` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+CREATE TABLE `reviews` (
+  `CODREVIWS` int(11) NOT NULL AUTO_INCREMENT,
+  `CODUSUARIO` int(11) DEFAULT NULL,
+  `DESCRICAO` varchar(100) DEFAULT NULL,
+  `IMAGEM` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`CODREVIWS`) USING BTREE,
-  INDEX `CPF`(`CODUSUARIO` ASC) USING BTREE,
-  CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of reviews
--- ----------------------------
+  KEY `CPF` (`CODUSUARIO`) USING BTREE,
+  CONSTRAINT `reviews_ibfk_1` FOREIGN KEY (`CODUSUARIO`) REFERENCES `usuario` (`CODUSUARIO`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for tipoentrega
 -- ----------------------------
 DROP TABLE IF EXISTS `tipoentrega`;
-CREATE TABLE `tipoentrega`  (
-  `CODTIPO` int NOT NULL,
-  `DESCRICAO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+CREATE TABLE `tipoentrega` (
+  `CODTIPO` int(11) NOT NULL,
+  `DESCRICAO` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CODTIPO`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of tipoentrega
--- ----------------------------
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;
 
 -- ----------------------------
 -- Table structure for usuario
 -- ----------------------------
 DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE `usuario`  (
-  `CODUSUARIO` int NOT NULL AUTO_INCREMENT,
-  `CPF` int NULL DEFAULT NULL,
-  `NOME` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `NASCIMENTO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `TELEFONE` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `ENDEREÇO` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `COMPLEMENTO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `BAIRRO` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `CIDADE` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `UF` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `CEP` int NULL DEFAULT NULL,
-  `EMAIL` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `SENHA` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+CREATE TABLE `usuario` (
+  `CODUSUARIO` int(11) NOT NULL AUTO_INCREMENT,
+  `CPF` int(11) DEFAULT NULL,
+  `NOME` varchar(50) DEFAULT NULL,
+  `NASCIMENTO` varchar(20) DEFAULT NULL,
+  `TELEFONE` varchar(15) DEFAULT NULL,
+  `ENDERECO` varchar(50) DEFAULT '',
+  `COMPLEMENTO` varchar(20) DEFAULT NULL,
+  `BAIRRO` varchar(20) DEFAULT NULL,
+  `CIDADE` varchar(20) DEFAULT NULL,
+  `UF` char(2) DEFAULT NULL,
+  `CEP` int(11) DEFAULT NULL,
+  `EMAIL` varchar(50) DEFAULT NULL,
+  `SENHA` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`CODUSUARIO`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
-
--- ----------------------------
--- Records of usuario
--- ----------------------------
-
-SET FOREIGN_KEY_CHECKS = 1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci ROW_FORMAT=DYNAMIC;

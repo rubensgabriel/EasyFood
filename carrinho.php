@@ -28,6 +28,7 @@ $resulttot =$crud->read($sql);
 foreach ($resulttot as $key => $row) {
 $subtotal = $row['TOTAL'];
 $total = $subtotal + $row['TAXA'];
+
 }
 
 ?>
@@ -183,7 +184,7 @@ $total = $subtotal + $row['TAXA'];
                     
                     <p class="total-label">Total</p>
 
-                    <p class="total-amount" id="total"><?php echo $total?></p>
+                    <p class="total-amount" id="total"><?php echo number_format($total, 2, '.', '');?></p>
 
                 </div>
 
@@ -226,7 +227,7 @@ function soma()
   var subtotal = parseFloat(document.getElementById('subtotal').innerText);
   var taxa = parseFloat(document.getElementById('taxa').innerText);
   var total  =(quantidade * subtotal +taxa );
-  document.getElementById('total').innerText = total;
+  parseFloat(document.getElementById('total').innerText) = total;
  }
 }
 
