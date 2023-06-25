@@ -107,9 +107,11 @@ require_once('./controller/listar_cardapio.php');
     <section class="gallery">
     <?php foreach ($resulcard  as $key => $row) {?>
       <div class="image" data-name="porcoes">
+      <div class="imagem-cardapio">
         <span><img src="<?php echo $row['URL'];?>"
             alt="Entrada">
             </span>
+            </div>
         <h2><?php echo $row['TITULO'];?></h2>
         <p><?php echo $row['DESCRICAO'];?></p>
         <div class="compra">

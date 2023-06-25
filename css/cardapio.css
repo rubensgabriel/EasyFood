@@ -400,7 +400,7 @@ polyline:last-child {
   }
 
   .gallery .image .imagem-cardapio img {
-    max-width: 200px;
+    max-width: 170px;
   }
 
   .image div span:first-child {
@@ -445,15 +445,15 @@ polyline:last-child {
   }
   .gallery .image {
     max-width: 200px !important;
-    max-height: 310px;
+    max-height: 290px;
   }
   .gallery .image .imagem-cardapio {
     max-width: 200px;
-    max-height: 160px;
+    max-height: 150px;
   }
 
   .gallery .image .imagem-cardapio img {
-    max-width: 200px;
+    max-width: 180px;
   }
 }
 
@@ -473,8 +473,8 @@ polyline:last-child {
     max-height: 125px;
   }
 
-  .imagem-cardapio img {
-    width: 160px;
+  .gallery .image .imagem-cardapio img {
+    max-width: 150px !important;
   }
 }
 
