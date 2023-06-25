@@ -79,7 +79,7 @@ if(isset($_GET['codcategoria']))
     </nav>
 
     <div class="logo-mobile">
-      <a class="mobile" href="index.html">
+      <a class="mobile" href="index.php">
         <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
       </a>
     </div>

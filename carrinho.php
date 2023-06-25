@@ -22,11 +22,12 @@ $sql = "SELECT * FROM compra WHERE CODUSUARIO =$id_usuario;";
 $crud = new Crud();
 $resultcp =$crud->read($sql);
 
-$sql = "SELECT SUM(c.VALOR) as TOTAL  FROM compra c WHERE CODUSUARIO =$id_usuario;";
+$sql = "SELECT SUM(c.VALOR) as TOTAL,c.TAXA FROM compra c WHERE CODUSUARIO =$id_usuario;";
 $crud = new Crud();
 $resulttot =$crud->read($sql);
 foreach ($resulttot as $key => $row) {
-$total = $row['TOTAL'];
+$subtotal = $row['TOTAL'];
+$total = $subtotal + $row['TAXA'];
 }
 
 ?>
@@ -64,7 +65,7 @@ $total = $row['TOTAL'];
               <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cardapio.html">Cardápio</a>
+              <a class="nav-link" href="cardapio.php">Cardápio</a>
             </li>
             <a class="logo desktop" href="home.php">
               <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
@@ -86,7 +87,7 @@ $total = $row['TOTAL'];
         </nav>
     
         <div class="logo-mobile">
-          <a class="mobile" href="index.html">
+          <a class="mobile" href="index.php">
             <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
           </a>
         </div>
@@ -165,7 +166,7 @@ $total = $row['TOTAL'];
                     
                     <p class="total-label">Subtotal</p>
 
-                    <p class="total-amount" id="subtotal"><?php echo $total?></p>
+                    <p class="total-amount" id="subtotal"><?php echo $subtotal?></p>
 
                 </div>
 
