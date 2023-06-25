@@ -1,6 +1,18 @@
 <?php
 require_once('./controller/validar_sessao.php');
-require_once('./controller/listar_cardapio.php');
+require_once('./model/crud.php');
+
+if(isset($_GET['codcategoria']))
+{
+ $categoria = $_GET['codcategoria'];
+ $sql = "SELECT * FROM cardapio WHERE CATEGORIA = $categoria";
+ $crud = new Crud();
+ $resulcard = $crud->read($sql);
+}else{
+ $sql = "SELECT * FROM cardapio;";
+ $crud = new Crud();
+ $resulcard = $crud->read($sql);
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -93,12 +105,12 @@ require_once('./controller/listar_cardapio.php');
         <input class="filter" type="text" placeholder="Pesquisa">
       </div>
       <ul class="items">
-        <li class="item active" data-name="todos">Todos</li>
-        <li class="item" data-name="porcoes">Porções</li>
-        <li class="item" data-name="salada">Fast Food</li>
-        <li class="item" data-name="refeicao">Refeições</li>
-        <li class="item" data-name="sobremesa">Sobremesas</li>
-        <li class="item" data-name="bebida">Bebidas</li>
+        <li class="item active" data-name="todos"><a href="javascript:cat_Todas()">Todos</a></li>
+        <li class="item" data-name="porcoes"><a href="javascript:cat_Porcoes()">Porções</a></li>
+        <li class="item" data-name="salada"><a href="javascript:cat_FastFood()">Fast Food</a></li>
+        <li class="item" data-name="refeicao"><a href="javascript:cat_Refeicoes()">Refeições</a></li>
+        <li class="item" data-name="sobremesa"><a href="javascript:cat_Sobremesas()">Sobremesas</a></li>
+        <li class="item" data-name="bebida"><a href="javascript:cat_Bebidas()">Bebidas</a></li>
       </ul>
     </div>
   </section>
@@ -142,5 +154,24 @@ require_once('./controller/listar_cardapio.php');
   <script src="js/modal.js"></script>
   <script src="js/load.js"></script>
 </body>
-
 </html>
+<script>
+function cat_Porcoes() {
+  window.location.replace("cardapio.php?codcategoria=1");
+}
+function cat_FastFood() {
+  window.location.replace("cardapio.php?codcategoria=2");
+}
+function cat_Refeicoes() {
+  window.location.replace("cardapio.php?codcategoria=3");
+}
+function cat_Sobremesas() {
+  window.location.replace("cardapio.php?codcategoria=4");
+}
+function cat_Bebidas() {
+  window.location.replace("cardapio.php?codcategoria=5");
+}
+function cat_Todas() {
+  window.location.replace("cardapio.php");
+}
+</script>
