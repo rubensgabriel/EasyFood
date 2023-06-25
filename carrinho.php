@@ -9,6 +9,15 @@ SELECT $id_usuario,p.CNPJ,p.TITULO,p.DESCRICAO,p.VALOR,p.QUANTIDADE,p.TAXA from 
 $crud = new Crud();
 $result =$crud->execute($sql);
 }
+
+if(isset($_GET['codcardapio'])){
+  $codcardapio = $_GET['codcardapio'];
+  $sql = "INSERT INTO compra (`CODUSUARIO`, `CNPJ`, `TITULO`, `DESCRICAO`, `VALOR`, `QUANTIDADE`) 
+  SELECT 1,c.CNPJ,c.TITULO,c.DESCRICAO,c.VALOR,c.QUANTIDADE from cardapio c WHERE c.CODCARDAPIO = $codcardapio;";
+  $crud = new Crud();
+  $result =$crud->execute($sql);
+}
+
 $sql = "SELECT * FROM compra WHERE CODUSUARIO =$id_usuario;";
 $crud = new Crud();
 $resultcp =$crud->read($sql);

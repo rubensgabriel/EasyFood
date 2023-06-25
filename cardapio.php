@@ -126,7 +126,7 @@ if(isset($_GET['codcategoria']))
             </div>
         <h2><?php echo $row['TITULO'];?></h2>
         <p><?php echo $row['DESCRICAO'];?></p>
-        <div class="compra">
+        <div class="compra" onclick="comprar(<?php echo $row['CODCARDAPIO'];?>)">
           <span><?php echo $row['VALOR'];?></span>
           <button class="button">
             <span>Adicionar</span>
@@ -174,5 +174,9 @@ function cat_Bebidas() {
 }
 function cat_Todas() {
   window.location.replace("cardapio.php");
+}
+
+function comprar(id) {
+  window.location.replace("carrinho.php?codcardapio=" + id);
 }
 </script>
