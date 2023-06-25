@@ -1,7 +1,7 @@
 <?php
 session_start();
 include('conexao.php');
-include('C:\xampp2\htdocs\Trabalho doida\EasyFood/model/crud.php');
+include('C:\xampp\htdocs\EasyFood\model\crud.php');
 
 $email =    ($_POST['Email']);
 $telefone = ($_POST['Telefone']);

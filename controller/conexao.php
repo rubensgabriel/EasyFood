@@ -2,7 +2,7 @@
 <?php
 class Dbconexao 
 {    
-    private $host = 'localhost:3307';
+    private $host = 'localhost';
     private $username = 'root';
     private $password = '';
     private $database = 'easyfood';
