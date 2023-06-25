@@ -1,3 +1,7 @@
+<?php
+require_once('./controller/validar_sessao.php');
+if(isset($_GET['valor'])){$valor =$_GET['valor'];}else{$valor = 0.00;}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -97,7 +101,7 @@
 
             <div class="compra">
                 <button class="finish">Finalizar</button>
-                <p>R$32,99</p>
+                <p><?php echo $valor?></p>
             </div>
         </div>
         
@@ -120,7 +124,7 @@
 
             <div class="compra">
                 <button class="finish">Finalizar</button>
-                <p>R$32,99</p>
+                <p><?php echo $valor?></p>
             </div>
         </div>
         
@@ -135,7 +139,7 @@
             <input type="reset" value="Reset">
             <div class="compra">
                 <button class="finish">Finalizar</button>
-                <p>R$32,99</p>
+                <p><?php echo $valor?></p>
             </div>
         </div>
         
