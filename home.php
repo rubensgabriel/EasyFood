@@ -31,6 +31,8 @@ require_once('./controller/listar_reviews.php');
   <!-- Sliders -->
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
   <title>EasyFood</title>
 </head>
 

@@ -1,12 +1,18 @@
 <?php
 require_once('./controller/validar_sessao.php');
 require_once('./model/crud.php');
+
 if(isset($_GET['codpromocao'])){
 $codpromocao = $_GET['codpromocao'];
-$sql = "SELECT p.*,(p.QUANTIDADE * p.VALOR + TAXA) as TOTAL FROM promocao p WHERE p.CODPROMOCAO =$codpromocao";
+$sql = "INSERT INTO compra (`CODUSUARIO`, `CNPJ`, `TITULO`, `DESCRICAO`, `VALOR`, `QUANTIDADE`, `TAXA`) 
+SELECT $id_usuario,p.CNPJ,p.TITULO,p.DESCRICAO,p.VALOR,p.QUANTIDADE,p.TAXA from promocao p WHERE p.CODPROMOCAO =$codpromocao ;";
 $crud = new Crud();
-$resultcp = $crud->read($sql);
+$result =$crud->execute($sql);
 }
+$sql = "SELECT * FROM compra WHERE CODUSUARIO =$id_usuario;";
+$crud = new Crud();
+$resultcp =$crud->read($sql);
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -27,6 +33,8 @@ $resultcp = $crud->read($sql);
 
     <!-- Ícones utilizados -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <title>Carrinho</title>
 </head>
@@ -96,7 +104,7 @@ $resultcp = $crud->read($sql);
                     <div class="cart-row">
                         <div class="cart-row-cell pic">
 
-                            <a href="#">-</a>
+                            <a href="javascript:exluir(<?php echo $row['CODCOMPRA']?>)">-</a>
                             
                             <span></span>
                         
@@ -205,4 +213,15 @@ function soma()
  }
 }
 
+function exluir(id)
+{
+  $.ajax({
+    method: "get",
+    url: "./controller/apagar_compra.php",
+    data: {codcompra:id},
+    success:function(response) {
+      window.location.replace("carrinho.php");
+    }     
+    });
+}
 </script>
