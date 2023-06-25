@@ -57,13 +57,13 @@ if(isset($_GET['codcategoria']))
           <a class="nav-link" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cardapio.html">Cardápio</a>
+          <a class="nav-link" href="cardapio.php">Cardápio</a>
         </li>
         <a class="logo desktop" href="home.php">
           <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
         </a>
         <li class="nav-item">
-          <a class="nav-link" href="sobre.html">Sobre</a>
+          <a class="nav-link" href="sobre.php">Sobre</a>
         </li>
         <li class="nav-item">
           <a class="nav-link">Contato</a>
@@ -154,6 +154,7 @@ if(isset($_GET['codcategoria']))
   <script src="js/modal.js"></script>
   <script src="js/load.js"></script>
 </body>
+
 </html>
 <script>
 function cat_Porcoes() {
