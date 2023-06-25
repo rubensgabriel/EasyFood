@@ -72,12 +72,12 @@ require_once('./controller/listar_cardapio.php');
       </a>
     </div>
 
-    <a href="login.html" class="user">
+    <a href="index.php" class="user">
       <i class="ph ph-user"></i>
       <p>Login</p>
     </a>
 
-    <a href="carrinho.html" class="carrinho">
+    <a href="carrinho.php" class="carrinho">
       <i class="ph ph-shopping-cart"></i>
       <p>Cesta</p>
     </a>

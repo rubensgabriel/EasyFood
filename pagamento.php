@@ -28,16 +28,16 @@
     
           <ul class="nav-list">
             <li class="nav-item">
-              <a class="nav-link" href="home.html">Home</a>
+              <a class="nav-link" href="home.php">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="cardapio.html">Cardápio</a>
+              <a class="nav-link" href="cardapio.php">Cardápio</a>
             </li>
-            <a class="logo desktop" href="home.html">
+            <a class="logo desktop" href="home.php">
               <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
             </a>
             <li class="nav-item">
-              <a class="nav-link" href="sobre.html">Sobre</a>
+              <a class="nav-link" href="sobre.php">Sobre</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="">Contato</a>
@@ -53,17 +53,17 @@
         </nav>
     
         <div class="logo-mobile">
-          <a class="mobile" href="home.html">
+          <a class="mobile" href="home.php">
             <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
           </a>
         </div>
     
-        <a href="login.html" class="user">
+        <a href="index.php" class="user">
           <i class="ph ph-user"></i>
           <p>Login</p>
         </a>
     
-        <a href="carrinho.html" class="carrinho">
+        <a href="carrinho.php" class="carrinho">
           <i class="ph ph-shopping-cart"></i>
           <p>Cesta</p>
         </a>

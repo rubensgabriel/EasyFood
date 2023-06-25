@@ -46,7 +46,7 @@ require_once('./controller/listar_reviews.php');
           <a class="nav-link" href="home.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="cardapio.html">Cardápio</a>
+          <a class="nav-link" href="cardapio.php">Cardápio</a>
         </li>
         <a class="logo desktop" href="home.php">
           <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
@@ -68,17 +68,17 @@ require_once('./controller/listar_reviews.php');
     </nav>
 
     <div class="logo-mobile">
-      <a class="mobile" href="home.html">
+      <a class="mobile" href="home.php">
         <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
       </a>
     </div>
 
-    <a href="login.html" class="user">
+    <a href="index.php" class="user">
       <i class="ph ph-user"></i>
       <p><?php echo strstr($usuario, ' ', true);?></p>
     </a>
 
-    <a href="carrinho.html" class="carrinho">
+    <a href="carrinho.php" class="carrinho">
       <i class="ph ph-shopping-cart"></i>
       <p>Cesta</p>
     </a>
