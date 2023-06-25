@@ -13,6 +13,13 @@ $sql = "SELECT * FROM compra WHERE CODUSUARIO =$id_usuario;";
 $crud = new Crud();
 $resultcp =$crud->read($sql);
 
+$sql = "SELECT SUM(c.VALOR) as TOTAL  FROM compra c WHERE CODUSUARIO =$id_usuario;";
+$crud = new Crud();
+$resulttot =$crud->read($sql);
+foreach ($resulttot as $key => $row) {
+$total = $row['TOTAL'];
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -75,12 +82,12 @@ $resultcp =$crud->read($sql);
           </a>
         </div>
     
-        <a href="login.html" class="user">
+        <a href="index.php" class="user">
           <i class="ph ph-user"></i>
           <p>Login</p>
         </a>
     
-        <a href="carrinho.html" class="carrinho">
+        <a href="carrinho.php" class="carrinho">
           <i class="ph ph-shopping-cart"></i>
           <p>Cesta</p>
         </a>
@@ -149,7 +156,7 @@ $resultcp =$crud->read($sql);
                     
                     <p class="total-label">Subtotal</p>
 
-                    <p class="total-amount" id="subtotal"><?php echo $row['VALOR'];?></p>
+                    <p class="total-amount" id="subtotal"><?php echo $total?></p>
 
                 </div>
 
@@ -166,7 +173,7 @@ $resultcp =$crud->read($sql);
                     
                     <p class="total-label">Total</p>
 
-                    <p class="total-amount" id="total"><?php echo $row['TOTAL'];?></p>
+                    <p class="total-amount" id="total"><?php echo $total?></p>
 
                 </div>
 
