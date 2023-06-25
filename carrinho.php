@@ -3,22 +3,17 @@ require_once('./controller/validar_sessao.php');
 require_once('./model/crud.php');
 if(isset($_GET['codpromocao'])){
 $codpromocao = $_GET['codpromocao'];
-$sql = "SELECT p.*, FORMAT(p.TAXA,2,'de_DE') AS TAXAF FROM promocao p WHERE p.CODPROMOCAO='$codpromocao'";
+$sql = "SELECT p.*,(p.QUANTIDADE * p.VALOR + TAXA) as TOTAL FROM promocao p WHERE p.CODPROMOCAO =$codpromocao";
 $crud = new Crud();
 $resultcp = $crud->read($sql);
-
 }
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-
-   
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Montserrat Font -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -118,11 +113,11 @@ $resultcp = $crud->read($sql);
                         <div class="cart-row-cell quant">
 
                             <ul>
-                                <li><a class="subtrair" href="#">-</a></li>
+                                <li><a class="subtrair" href="javascript:subtrair()">-</a></li>
 
-                                <li class="quantidade">2</li>
+                                <li id="quantidade"><?php echo $row['QUANTIDADE'];?></li>
                                 
-                                <li><a class="soma" href="#">+</a></li>
+                                <li><a class="soma" href="javascript:soma()">+</a></li>
                             </ul>
 
                         </div>
@@ -146,7 +141,7 @@ $resultcp = $crud->read($sql);
                     
                     <p class="total-label">Subtotal</p>
 
-                    <p class="total-amount">R$13,87</p>
+                    <p class="total-amount" id="subtotal"><?php echo $row['VALOR'];?></p>
 
                 </div>
 
@@ -154,7 +149,7 @@ $resultcp = $crud->read($sql);
                     
                     <p class="total-label">Taxa</p>
 
-                    <p class="total-amount">R$<?php echo $row['TAXAF'];?></p>
+                    <p class="total-amount" id="taxa"><?php echo $row['TAXA'];?></p>
 
                 </div>
 
@@ -163,11 +158,11 @@ $resultcp = $crud->read($sql);
                     
                     <p class="total-label">Total</p>
 
-                    <p class="total-amount">R$15,87</p>
+                    <p class="total-amount" id="total"><?php echo $row['TOTAL'];?></p>
 
                 </div>
 
-                <button class="btn-finalizar">Finalizar Compra</button>
+                <button class="btn-finalizar" >Finalizar Compra</button>
 
             </div>
 
@@ -180,11 +175,34 @@ $resultcp = $crud->read($sql);
   <img src="imagens/loader-food.gif" alt="">
 </div>
 <script src="js/load.js"></script>
-<script>
-
-  var quantidade = $('.quantidade').text();
-
-  </script>
 
 </body>
 </html>
+
+<script>
+function subtrair()
+{
+var quantidade = document.getElementById('quantidade').innerText;
+  if(quantidade > 0){
+  quantidade--;
+  document.getElementById('quantidade').innerText = quantidade;
+  var taxa = parseFloat(document.getElementById('taxa').innerText);
+  var valor = parseFloat(document.getElementById('subtotal').innerText);
+  var total = (quantidade * valor + taxa);
+  document.getElementById('total').innerText = total;
+  }
+}
+function soma()
+{
+  var quantidade = document.getElementById('quantidade').innerText;
+  if(quantidade >= 0){
+  quantidade++;
+  document.getElementById('quantidade').innerText = quantidade;
+  var subtotal = parseFloat(document.getElementById('subtotal').innerText);
+  var taxa = parseFloat(document.getElementById('taxa').innerText);
+  var total  =(quantidade * subtotal +taxa );
+  document.getElementById('total').innerText = total;
+ }
+}
+
+</script>
