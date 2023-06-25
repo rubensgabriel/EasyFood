@@ -177,7 +177,7 @@ $total = $row['TOTAL'];
 
                 </div>
 
-                <button class="btn-finalizar" >Finalizar Compra</button>
+                <button class="btn-finalizar" onclick="myFunction()">Finalizar Compra</button>
 
             </div>
 
@@ -232,4 +232,8 @@ function exluir(id)
     });
 }
 
+function myFunction() {
+  var valor = document.getElementById('total').innerText;
+  window.location.replace("pagamento.php?valor="+valor);
+}
 </script>
