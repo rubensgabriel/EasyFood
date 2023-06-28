@@ -19,7 +19,7 @@ if(!empty($result)){
  header("location:../home.php"); 
  }   
 }else{
- $_SESSION['menssagem'] = 'E-mail ou senha incorretos.';
+ $_SESSION['menssagem'] = array('menssagem'=>'E-mail ou senha incorretos.', 'cor' =>'red');
  header("location:../index.php"); 
 }
 

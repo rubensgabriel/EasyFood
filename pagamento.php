@@ -138,7 +138,7 @@ if(isset($_GET['valor'])){$valor =$_GET['valor'];}else{$valor = 0.00;}
             <input type="submit" value="Submit">
             <input type="reset" value="Reset">
             <div class="compra">
-                <button class="finish">Finalizar</button>
+                <button class="finish ">Finalizar</button>
                 <p><?php echo $valor?></p>
             </div>
         </div>
