@@ -100,7 +100,7 @@ if(isset($_GET['valor'])){$valor =$_GET['valor'];}else{$valor = 0.00;}
             <input type="reset" value="Reset">
 
             <div class="compra">
-                <button class="finish">Finalizar</button>
+                <button class="finish"  onclick="finalizarCompra()">Finalizar</button>
                 <p><?php echo $valor?></p>
             </div>
         </div>
@@ -169,3 +169,8 @@ if(isset($_GET['valor'])){$valor =$_GET['valor'];}else{$valor = 0.00;}
       </main>
 </body>
 </html>
+<script>
+  function finalizarCompra() {
+  window.location.replace('home.php');
+}
+</script>
