@@ -139,18 +139,18 @@ $total = $subtotal + $row['TAXA'];
                         <div class="cart-row-cell quant">
 
                             <ul>
-                                <li><a class="subtrair" href="javascript:subtrair()">-</a></li>
+                                <li><a class="subtrair" href="javascript:subtrair(<?php echo $row['CODCOMPRA']?>,<?php echo $row['VALOR'];?>)">-</a></li>
 
-                                <li id="quantidade"><?php echo $row['QUANTIDADE'];?></li>
+                                <li id="quantidade_<?php echo $row['CODCOMPRA']?>"><?php echo $row['QUANTIDADE'];?></li>
                                 
-                                <li><a class="soma" href="javascript:soma()">+</a></li>
+                                <li><a class="soma" href="javascript:soma(<?php echo $row['CODCOMPRA']?>,<?php echo $row['VALOR'];?>)">+</a></li>
                             </ul>
 
                         </div>
 
                         <div class="cart-row-cell amount">
 
-                            <p><?php echo $row['VALOR'];?></p>
+                            <p id="valor_<?php echo $row['CODCOMPRA']?>"><?php echo $row['VALOR'];?></p>
 
                         </div>	
                     
@@ -184,7 +184,7 @@ $total = $subtotal + $row['TAXA'];
                     
                     <p class="total-label">Total</p>
 
-                    <p class="total-amount" id="total"><?php echo number_format($total, 2, '.', '');?></p>
+                    <p class="total-amount" id="total"><?php echo $total?></p>
 
                 </div>
 
@@ -206,28 +206,32 @@ $total = $subtotal + $row['TAXA'];
 </html>
 
 <script>
-function subtrair()
+function subtrair(id,valor)
 {
-var quantidade = document.getElementById('quantidade').innerText;
+var quantidade = document.getElementById('quantidade_'+ id).innerText;
   if(quantidade > 0){
   quantidade--;
-  document.getElementById('quantidade').innerText = quantidade;
-  var taxa = parseFloat(document.getElementById('taxa').innerText);
-  var valor = parseFloat(document.getElementById('subtotal').innerText);
-  var total = (quantidade * valor + taxa);
-  document.getElementById('total').innerText = total;
+  document.getElementById('quantidade_'+ id).innerText = quantidade;
+  document.getElementById('valor_'+ id).innerText = valor * quantidade;
+  document.getElementById('subtotal').innerText=parseFloat(document.getElementById('subtotal').innerText)-valor;
+  document.getElementById('total').innerText=parseFloat(document.getElementById('total').innerText)-valor;
+  
+  
+
+  
   }
 }
-function soma()
+function soma(id,valor)
 {
-  var quantidade = document.getElementById('quantidade').innerText;
+  var quantidade = document.getElementById('quantidade_'+ id).innerText;
   if(quantidade >= 0){
   quantidade++;
-  document.getElementById('quantidade').innerText = quantidade;
-  var subtotal = parseFloat(document.getElementById('subtotal').innerText);
-  var taxa = parseFloat(document.getElementById('taxa').innerText);
-  var total  =(quantidade * subtotal +taxa );
-  parseFloat(document.getElementById('total').innerText) = total;
+  document.getElementById('quantidade_' + id).innerText = quantidade;
+  document.getElementById('valor_'+ id).innerText = valor * quantidade;
+  document.getElementById('subtotal').innerText=parseFloat(document.getElementById('subtotal').innerText)+valor;
+  document.getElementById('total').innerText=parseFloat(document.getElementById('total').innerText)+valor;
+  
+
  }
 }
 
