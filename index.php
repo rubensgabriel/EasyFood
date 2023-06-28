@@ -131,3 +131,13 @@
     <script src="js/form.js"></script>
 </body>
 </html>
+<script>
+function btn solid(){
+
+flag = checaCampos(['Email']);
+if(flag == false){
+    alert('Preencha corretamente os campos!');
+}
+return  flag; 
+}
+</script>

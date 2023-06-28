@@ -66,7 +66,7 @@ if(isset($_GET['codcategoria']))
           <a class="nav-link" href="sobre.php">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Contato</a>
+        <a class="nav-link" href="feedback.php">Feedback</a>
         </li>
       </ul>
 

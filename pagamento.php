@@ -44,7 +44,7 @@ if(isset($_GET['valor'])){$valor =$_GET['valor'];}else{$valor = 0.00;}
               <a class="nav-link" href="sobre.php">Sobre</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Contato</a>
+            <a class="nav-link" href="feedback.php">Feedback</a>
             </li>
           </ul>
     

@@ -1,17 +1,32 @@
-       
+body {
+    font-family: 'Montserrat';
+    background: linear-gradient(#ebeaea, rgb(168, 168, 168));
+}       
+
 footer { 
-    position:absolute;
-    bottom: 0;
-    background: linear-gradient(rgb(168, 168, 168), #e0591a);
+    background: linear-gradient(#e0591a, #e0591a);
+    align-content: space-between;
     color: #FFF;
-    width: 100%;
-    height: 120px;    
+    width: 100%;   
     text-align:center;
-    line-height: 23px; 
-    position: relative;    
-    margin-left: auto; /* linha modificada */
-    margin-right: auto; /* linha adicionada */
-    padding-top: 60px;
+    line-height: 25px;
+    margin: 0; 
+    padding-top: 15px;
+    box-shadow: 7px 9px 12px rgba(0, 0, 0, 0.253) inset;
+    font-size: 14px;
+}
+
+.rodape {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.rodape h2{
+    font-size: 1.2rem
+}
+
+.direitos {
+    margin-top: 10px;
     
 }
 section {
@@ -30,11 +45,13 @@ section .content {
 
 section .content h1 {
     font-size: 3rem;
+    color: rgb(18, 41, 56);
 }
 
 section .content p {
     font-size: 18px;
     margin: 10px 0;
+    color: rgb(68, 68, 68);
 }
 
 section .content a {
@@ -42,36 +59,51 @@ section .content a {
     font-size: 16px;
     font-weight: bold;
     color: black;
-    background: white;
+    background-color: #e0591a;;
     padding: 15px 20px;
     border-radius: 5px;
+    color: #fff;
 }
 
 section img {
-    width: 500px;
-    height: 450px;
+    max-width: 600px;
     object-fit: cover;
-    border-radius: 20%;
-    
     -moz-border-radius: 10%;
     -ms-border-radius: 10%;
     -o-border-radius: 10%;
 }
 
-section .content a:hover {
-    animation: btn 0.5s infinite alternate ease-in-out; 
+section img:hover {
+    animation: btn 1s infinite alternate ease-in-out; 
 }
 
-@media (max-width:500px){
+section .content a:hover {
+    animation: btn 0.8s infinite alternate ease-in-out; 
+}
+
+
+@media (max-width:600px){
     section img {
-        width: 350px;
-        height: 300px;
+        max-width: 350px;
         object-fit: cover;
         border-radius: 20%;
         -webkit-border-radius: 10%;
         -moz-border-radius: 10%;
         -ms-border-radius: 10%;
         -o-border-radius: 10%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+
+    footer p {
+        margin: 0;
+        padding: 0;
+    }
+
+    footer div {
+        grid-template-columns: 1fr 1fr;
     }
 }
   

@@ -52,10 +52,10 @@ require_once('./controller/listar_reviews.php');
           <img src="./imagens/Sonya-Swarm-Fast-Food.ico" alt="">
         </a>
         <li class="nav-item">
-          <a class="nav-link" href="sobre.html">Sobre</a>
+          <a class="nav-link" href="sobre.php">Sobre</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="">Contato</a>
+        <a class="nav-link" href="feedback.php">Feedback</a>
         </li>
       </ul>
 
