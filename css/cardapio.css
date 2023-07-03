@@ -137,16 +137,22 @@ ul {
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 10px;
-  max-height: 50%;
+  height: 210px;
   text-align: center;
 }
 
 .gallery .image .imagem-cardapio img {
-  max-width: 280px;
+  width: 280px;
+  min-height: 210px;
 }
 
-.image h2 {
-  margin: 25px 0 15px;
+.nome-comida {
+  height: 55px;
+  margin: 0px;
+}
+
+.nome-comida h2 {
+  margin: 1px 0px 10px;
   color: #333;
   font-size: 22px;
   /* font-weight: lighter; */
@@ -396,11 +402,12 @@ polyline:last-child {
   }
 
   .gallery .image .imagem-cardapio {
-    max-height: 135px;
+    height: 135px;
   }
 
   .gallery .image .imagem-cardapio img {
     max-width: 170px;
+    min-height: 135px;
   }
 
   .image div span:first-child {
@@ -419,7 +426,7 @@ polyline:last-child {
 
   .button {
     width: 10px !important;
-    padding-top: 8px;
+    padding-top: 5px;
   }
 
   .button span {
@@ -435,6 +442,15 @@ polyline:last-child {
   .input-search {
     width: 90%;
   }
+
+  .nome-comida {
+    height: 35px;
+  }
+
+  .nome-comida h2 {
+    margin-bottom: 20px;
+  }
+  
 }
 
 @media (max-width: 550px) {
@@ -449,11 +465,16 @@ polyline:last-child {
   }
   .gallery .image .imagem-cardapio {
     max-width: 200px;
-    max-height: 150px;
+    height: 140px;
   }
 
   .gallery .image .imagem-cardapio img {
     max-width: 180px;
+    min-height: 140px;
+  }
+
+  .nome-comida {
+    height: 45px;
   }
 }
 
@@ -464,17 +485,31 @@ polyline:last-child {
   }
 
   .gallery .image {
-    width: 170px;
+    width: 175px;
     height: 265px;
   }
 
+  .gallery .image h2{
+    font-size: 15px;
+    position: relative;
+  }
+
   .gallery .image .imagem-cardapio {
-    max-width: 190px !important;
-    max-height: 125px;
+    width: 155px !important;
+    height: 120px;
   }
 
   .gallery .image .imagem-cardapio img {
-    max-width: 150px !important;
+    min-height: 130px;
+    width: 155px;
+  }
+
+  .nome-comida {
+    height: 35px;
+  }
+
+  .nome-comida h2 {
+    margin-bottom: 10px;
   }
 }
 
